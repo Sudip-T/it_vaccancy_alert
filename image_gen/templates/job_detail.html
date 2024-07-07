@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block title %}Job Details{% endblock %}
+
+
+{% block content %}
+<main>
+    <div class="container job-details">
+        <div class="job-description">
+            <div class="company-banner">
+                <img src="path/to/company-banner.jpg" alt="Company Banner">
+            </div>
+            <div class="company-details">
+                <h2>{{job_listing.company}}</h2>
+                <p>Software Industry - Lalitpur</p>
+                <p>{{job_listing.company_description}}</p>
+            </div>
+            <div class="job-info">
+                <h2>{{job.position}}</h2>
+                <p>Apply Before: {{job_listing.deadline}} (12 Days Left) | Views: 6190</p>
+                <h3>Job Summary</h3>
+                <table>
+                    <tr>
+                        <td>No. of Vacancy:</td>
+                        <td>{{job_listing.no_of_vaccancy}}</td>
+                    </tr>
+                    <tr>
+                        <td>Job Type:</td>
+                        <td>{{job_listing.job_type}}</td>
+                    </tr>
+                    <tr>
+                        <td>Career Level:</td>
+                        <td>{{job_listing.career_level}}</td>
+                    </tr>
+                    <tr>
+                        <td>Offered Salary:</td>
+                        <td>{{job_listing.salary}}</td>
+                    </tr>
+                    <tr>
+                        <td>Experience:</td>
+                        <td>{{job_listing.experience}}</td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="job-info job_description">
+                <p><strong>Responsibilities</strong></p>
+                <ul class="requirement-ul">
+                    {% for responsibility in responsibilities %}
+                    {% if responsibility %}
+                    <li>{{ responsibility }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="job-info job_description">
+                <p><strong>Qualifications</strong></p>
+                <ul class="requirement-ul">
+                    {% for qualification in qualifications_list %}
+                    {% if qualification %}
+                    <li>{{ qualification }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="job-info job_description">
+                <p><strong>Additional Information</strong></p>
+
+                {% for info in additional_info %}
+                {% if info %}
+                <p class="requirement-ul">{{info}}</p>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="job-sidebar">
+            <div class="job-action">
+                <button class="save-job">Save Job</button>
+                <button class="apply-now">Apply Now</button>
+            </div>
+            <div class="similar-jobs">
+                <h3>Company Other Jobs</h3>
+                <ul>
+                    <li>
+                        <a href="#">Flutter Instructor</a>
+                        <p>TechAxis<br>0 Days Left</p>
+                    </li>
+                    <li>
+                        <a href="#">DevOps Instructor</a>
+                        <p>TechAxis<br>10 Days Left</p>
+                    </li>
+                    <li>
+                        <a href="#">Freelance Technical...</a>
+                        <p>TechAxis<br>22 Days Left</p>
+                    </li>
+                    <li>
+                        <a href="#">BI Instructor</a>
+                        <p>TechAxis<br>24 Days Left</p>
+                    </li>
+                    <li>
+                        <a href="#">Oracle Database Inst...</a>
+                        <p>TechAxis<br>24 Days Left</p>
+                    </li>
+                    <li>
+                        <a href="#">Python with Data Sci...</a>
+                        <p>TechAxis<br>27 Days Left</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="related-jobs">
+                <h3>Related Jobs</h3>
+                <ul>
+                    <li>
+                        <a href="#">Quality Analyst</a>
+                        <p>EB Pearls<br>9 Days Left</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

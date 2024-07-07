@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <title>Job Vacancy</title>
+</head>
+
+<body>
+    <div class="container" id="job-container" data-job-id="{{ job.id }}">
+        <div class="banner">
+            <div class="overlay"></div>
+            <h1>Vacancy Alert</h1>
+        </div>
+        <div class="content">
+            <div class="content-in">
+                <div class="position-title">
+                    <p>{{ job.position }}</p>
+                </div>
+                <div class="job">
+                    <div class="job-detail">
+                        <p>Company: {{ job.company }}</p>
+                    </div>
+                    <div class="job-detail position">
+                        <p>Experience: {{ job.experience }}</p>
+                    </div>
+                    <div class="job-detail experience">
+                        <p>Job Type: {{ job.job_type }}</p>
+                    </div>
+                    <div class="job-detail job-type">
+                        <p>Location: {{ job.location }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+        <script>
+            document.getElementById('job-container').addEventListener('click', function () {
+                console.log('taking screenshot...')
+                var jobID = this.getAttribute('data-job-id');
+                var url = '/job/take_screenshot/' + jobID + '/';
+                var formData = new FormData();
+                formData.append('job_id', jobID);
+                fetch(url, {
+                    method: 'GET',
+                }).then(response => {
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                }).then(data => {
+                    console.log(data);
+                }).catch(error => {
+                    console.error('Error requesting screenshot:', error);
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>

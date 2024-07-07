@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Job Portal{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <p>IT Vaccancy Alert</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">VACANCIES</a></li>
+                    <li><a href="{% url 'create_listing' %}">create vaccancy</a></li>
+                    <li><a href="{% url 'screenshot' %}">screenshots</a></li>
+                    <li><a href="#">POST VACANCIES</a></li>
+                </ul>
+            </nav>
+            <div class="auth-links">
+                <a href="#">SIGN IN</a>
+                <a href="#">REGISTER</a>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>About Us</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et sem.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contact Info</h3>
+                    <p>123 Street Name, City, Country</p>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +123-456-7890</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="copyright-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="header_social_links">
+                            <b>Our Social Links:</b>
+                            <ul>
+                                <li><a href="https://www.facebook.com/jobaxle/" target="_blank"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/jobaxle/" target="_blank"><i
+                                            class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/jobaxle/" target="_blank"><i
+                                            class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
+                        <p> © 2024 jobaxle.com All rights reserved.</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

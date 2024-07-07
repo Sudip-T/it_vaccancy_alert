@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+    <title>Create Job Listing</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Create Job Listing</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_position">Position:</label>
+            {{ form.position }}
+            
+            <label for="id_company">Company:</label>
+            {{ form.company }}
+            
+            <label for="id_experience">Experience:</label>
+            {{ form.experience }}
+            
+            <label for="id_job_type">Job type:</label>
+            {{ form.job_type }}
+            
+            <label for="id_location">Location:</label>
+            {{ form.location }}
+            
+            <label for="id_deadline">Deadline:</label>
+            {{ form.deadline }}
+            
+            <label for="id_company_description">Company description:</label>
+            {{ form.company_description }}
+            
+            <label for="id_job_description">Job description:</label>
+            {{ form.job_description }}
+            
+            <label for="id_technical_skills">Technical skills:</label>
+            {{ form.technical_skills }}
+            
+            <label for="id_responsibilities">Responsibilities:</label>
+            {{ form.responsibilities }}
+            
+            <label for="id_qualifications">Qualifications:</label>
+            {{ form.qualifications }}
+            
+            <label for="id_additional_information">Additional information:</label>
+            {{ form.additional_information }}
+            
+            <button type="submit">Create Listing</button>
+        </form>
+    </div>
+</body>
+</html>

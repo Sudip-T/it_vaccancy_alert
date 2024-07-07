@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ job_listing.position }} at {{ job_listing.company }}</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <style>
+        /* Inline styles for specific adjustments */
+        .job-details {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .job-details h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .job-details p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .job-details ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-top: 0;
+        }
+
+        .back-link {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1>{{ job_listing.position }} at {{ job_listing.company }}</h1>
+        </div>
+        <div class="content">
+            <div class="job-details">
+                <h2>Job Details</h2>
+                <p><strong>Company Description:</strong> {{ job_details.company_description }}</p>
+                <p><strong>Job Description:</strong> {{ job_details.job_description }}</p>
+                <p><strong>Technical Skills:</strong> {{ job_details.technical_skills }}</p>
+                <p><strong>Responsibilities:</strong></p>
+                <ul>
+                    {% for responsibility in responsibilities %}
+                        {% if responsibility %}
+                            <li>{{ responsibility }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <p><strong>Qualifications:</strong></p>
+                <ul>
+                    {% for qualification in qualifications_list %}
+                        {% if qualification %}
+                            <li>{{ qualification }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                <p><strong>Additional Information:</strong></p>
+                <ul>
+                    {% for info in additional_info %}
+                        {% if info %}
+                            <li>{{ info }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="back-link">
+                <a href="/">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

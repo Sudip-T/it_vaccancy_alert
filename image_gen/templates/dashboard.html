@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - IT Vaccancy Alert{% endblock %}
+
+{% block content %}
+
+<main>
+    <div class="search-section">
+        <h1>The Easiest Way to Get Your New Job</h1>
+        <p>We offer many job vacancies right now</p>
+        <form class="search-form">
+            <input type="text" placeholder="Job Keyword">
+            <input type="text" placeholder="Location">
+            <button type="submit">SEARCH</button>
+        </form>
+    </div>
+    <div class="job-section">
+        <div class="tabs">
+            <button class="tab-link active">POPULAR JOBS</button>
+            <button class="tab-link">RECENT JOBS</button>
+            <button class="tab-link">TOP JOBS</button>
+        </div>
+        <div class="job-list">
+            {% for job in jobs %}
+            <div class="job-card" onclick="location.href='{% url 'job_listing_details' job.id %}'">
+                <h2>{{ job.position }}</h2>
+                <p>{{ job.company }}</p>
+                <p>Experience: {{ job.experience }}</p>
+                <p>Location: {{ job.location }}</p>
+                <p class="days-left">In 5 days</p>
+                <a href="{% url 'job_listing_details' job.id %}">details</a>
+                <a href="{% url 'screenshotview' job.id %}">screenshotview</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
