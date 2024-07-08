@@ -1,0 +1,64 @@
+Filtering
+Employement_type 
+Location : country, district
+Seniority_level
+Keywords : name,position,location
+
+Search
+Keywords
+Location
+
+
+
+
+Navbar  : ref nav_bar.png
+IT Vaccancy Alert
+Home
+Find Jobs
+Post a job
+Courses free
+Authentication
+
+
+
+
+
+
+Footer : ref footer (3)
+Left : it vacancy alert, 
+Mid : job seeker
+Mid : job poster
+Right : about us
+
+Jobseeker
+Create an account
+Find a job
+Jobseeker terms and conditions
+Feedback
+
+Bottom footer
+Follow us on : facebook, linkedin, instagram and youtube
+@2024 itvaccancyalert.com. All rights reserved.
+
+
+left
+It vacancy alert
+Website
+Location
+Contact
+Email
+
+
+Right
+About us
+Find a job
+
+Search
+Search by job, company, location
+
+
+
+Quick links
+Privacy policy
+Terms and conditions
+Fraud alert

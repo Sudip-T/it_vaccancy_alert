@@ -1,15 +1,12 @@
 import os
-import time
 import ctypes
-import datetime
-from pathlib import Path
 from selenium import webdriver
+from .models import JobListing
+from django.conf import settings
 from selenium.webdriver.common.by import By
+from django.shortcuts import get_object_or_404
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from .models import JobListing
-from django.shortcuts import get_object_or_404
-from django.conf import settings
 
 
 class WebDriverManager:
@@ -51,7 +48,7 @@ class WebDriverManager:
 
 
 class TakeScreenshot(WebDriverManager):
-    def __init__(self, img_dir = 'screenshots'):
+    def __init__(self, img_dir = 'vaccancy'):
         super().__init__()
         self.initialize_driver()
         self.url = 'http://localhost:8000/job/'
