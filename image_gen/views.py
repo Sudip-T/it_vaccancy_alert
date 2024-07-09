@@ -5,7 +5,8 @@ from django.http import HttpResponse
 from .utility import TakeScreenshot
 
 
-# def create_listing(request):
+def create_listing(request):
+    pass
 #     if request.method == 'POST':
 #         form = JobForm(request.POST)
 #         if form.is_valid():
@@ -17,22 +18,26 @@ from .utility import TakeScreenshot
 #     return render(request, 'create_vaccancy.html', {'form': form})
 
 
-# def listings(request):
-#     jobs = JobListing.objects.all()
-#     return render(request, 'dashboard.html', {'jobs': jobs})
+def listings(request):
+    # pass
+    jobs = JobListing.objects.all()
+    return render(request, 'dashboard.html', {'jobs': jobs})
 
 
-# def screenshotview(request, job_id):
-#     job = get_object_or_404(JobListing, pk=job_id)
-#     return render(request, 'take_screenshot.html', {'job': job})
+def screenshotview(request, job_id):
+    # pass
+    job = get_object_or_404(JobListing, pk=job_id)
+    return render(request, 'screenshot.html', {'job': job})
 
 
-# def take_screenshot(request, job_id):
-#     response = TakeScreenshot().take_screenshot(job_id)
-#     return HttpResponse(response)
+def take_screenshot(request, job_id):
+    # pass
+    response = TakeScreenshot().take_screenshot(job_id)
+    return HttpResponse(response)
 
 
-# def job_listing_details(request, job_listing_id):
+def job_listing_details(request, job_listing_id):
+    pass
 #     job_listing = get_object_or_404(JobListing, pk=job_listing_id)
 #     job_details = job_listing.details
 #     qualifications = job_details.qualifications.split('\n')
@@ -49,5 +54,6 @@ from .utility import TakeScreenshot
 #     return render(request, 'job_detail.html', context)
 
 
-# def screenshot(request):
+def screenshot(request):
+    pass
 #     return HttpResponse('hello')

@@ -56,7 +56,7 @@ class TakeScreenshot(WebDriverManager):
     
     def take_screenshot(self,job_id):
         self.driver.get(f'{self.url}{job_id}/')
-        container = self.driver.find_element(By.CLASS_NAME, 'container')
+        container = self.driver.find_element(By.CLASS_NAME, 'content')
         position = self.driver.find_element(By.CLASS_NAME, 'position-title').text
         position = position.lower().replace(' ','_')
 

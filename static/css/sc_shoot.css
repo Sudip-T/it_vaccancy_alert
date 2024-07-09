@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Poppins Bold';
+    src: url('fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins Light';
+    src: url('fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.content {
+    color: white;
+    position: relative;
+    background: url('/static/img/hiring_7.png') no-repeat center center;
+    background-size: cover;
+    width: 600px; 
+    height: 800px;
+}
+
+.d-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.d-right {
+    flex-basis: 40%;
+    padding: 20px;
+    /* background: rgba(255, 255, 255, 0.3); */
+}
+
+.d-left {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 30px 20px 20px;
+    /* background: rgb(0 0 0 / 12%); */
+    height: 100%;
+}
+
+.job-details {
+    text-align: right;
+    margin: auto 0;
+}
+
+.contact {
+    position: absolute;
+    bottom: 65px;
+    right: 181px;
+    text-align: right;
+}
+
+.job-details h2 {
+    font-size: 24px;
+    /* font-size: 18.5px; */
+    margin: 10px 0;
+    color: #018b93;
+    font-weight: bold;
+    font-family: 'Poppins Bold';
+}
+
+.job-details p, .contact p {
+    margin: 5px 0;
+    color: #36505b;
+    font-size: 16px;
+    font-family: 'Poppins Light';
+}
+
+.job-details h3, .cp {
+    font-size: 18px !important;
+    font-weight: bold;
+    color: #333652;
+    font-family: 'Poppins Bold' !important;
+}
+
+.contact a {
+    color: #0073b1;
+    text-decoration: none;
+    font-weight: bold;
+}
+.mtb-10, .job-details p {
+    margin: 10px 0 !important;
+}
