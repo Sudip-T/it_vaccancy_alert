@@ -5,111 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Take Screenshot</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/sc_shoot.css' %}">
+    <title>Take Screenshot</title>
 </head>
 
-<style>
-
-@font-face {
-    font-family: 'Poppins Bold';
-    src: url('Poppins-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Poppins Light';
-    src: url('Poppins-Medium.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.content {
-    color: white;
-    position: relative;
-    background: url('/static/img/hiring_email.png') no-repeat center center;
-    background-size: cover;
-    width: 600px; 
-    height: 800px;
-}
-
-.d-flex {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
-.d-right {
-    flex-basis: 40%;
-    padding: 20px;
-    /* background: rgba(255, 255, 255, 0.3); */
-}
-
-.d-left {
-    flex-basis: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 30px 20px 20px;
-    /* background: rgb(0 0 0 / 12%); */
-    height: 100%;
-}
-
-.job-details {
-    text-align: right;
-    margin: auto 0;
-}
-
-.contact {
-    position: absolute;
-    bottom: 65px;
-    right: 181px;
-    text-align: right;
-}
-
-.job-details h2 {
-    font-size: 24px;
-    /* font-size: 18.5px; */
-    margin: 10px 0;
-    color: #018b93;
-    font-weight: bold;
-    font-family: 'Poppins Bold';
-}
-
-.job-details p, .contact p {
-    margin: 5px 0;
-    color: #36505b;
-    font-size: 16px;
-    font-family: 'Poppins Light';
-}
-
-.job-details h3, .cp {
-    font-size: 18px !important;
-    font-weight: bold;
-    color: #333652;
-    font-family: 'Poppins Bold' !important;
-}
-
-.contact a {
-    color: #0073b1;
-    text-decoration: none;
-    font-weight: bold;
-}
-.mtb-10, .job-details p {
-    margin: 10px 0 !important;
-}
-
-</style>
 
 <body>
     <div class="content" id="job-container" data-job-id="{{ job.id }}">
@@ -117,55 +17,22 @@ body {
             <div class="d-right"></div>
             <div class="d-left">
                 <div class="job-details">
-                    <h2 class="position-title">MID LEVEL JAVA DEVELOPER</h2>
-                    <h3 class="mtb-10">Code Himalaya</h3>
-                    <p>On-site Full-time</p>
-                    <p>Lalitpur, Nepal</p>
-                    <p>2-3 Years of Professional Experience</p>
+                    <h2 class="position-title">{{ job.position }}</h2>
+                    <h3 class="mtb-10">{{ company.name }}</h3>
+                    <p>Job Type: {{ job.Employement_type }}</p>
+                    <p>{{ company.address }}</p>
+                    <p>Experience: {{ job.experience }}</p>
                 </div>
                 <div class="contact">
                     <p class="cp">Send your resume</p>
-                    <p class="cd"><a href="mailto:vacancy@codehimalaya.net">vacancy@codehimalaya.net</a></p>
+                    <p class="cd"><a href="mailto:vacancy@codehimalaya.net">{{job.application_email}}</a></p>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <script>
-        document.getElementById('job-container').addEventListener('click', function () {
-            console.log('taking screenshot...')
-            var jobID = this.getAttribute('data-job-id');
-            var url = '/job/take_screenshot/' + jobID + '/';
-            var formData = new FormData();
-            formData.append('job_id', jobID);
-            fetch(url, {
-                method: 'GET',
-            }).then(response => {
-                if (response.ok) {
-                    return response.text();
-                } else {
-                    throw new Error('Network response was not ok.');
-                }
-            }).then(data => {
-                console.log(data);
-            }).catch(error => {
-                console.error('Error requesting screenshot:', error);
-            });
-        });
-    </script>
-    <script>
-        window.onload = function () {
-            const contentDiv = document.querySelector('.content');
-            const bgImage = new Image();
-            bgImage.src = '/static/img/hiring_email.png';
 
-            bgImage.onload = function () {
-                contentDiv.style.width = `${bgImage.width}px`;
-                contentDiv.style.height = `${bgImage.height}px`;
-            };
-        };
+    <script src="{% static 'js/main.js' %}"></script>
 
-    </script>
 </body>
 
 </html>

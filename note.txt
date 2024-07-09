@@ -1,0 +1,19 @@
+Filtering
+Employement_type 
+Location : country, district
+Seniority_level
+Keywords : name,position,location
+
+
+Search
+Keywords
+Location
+Search by job, company, location
+
+
+
+Footer : ref footer (3)
+Left : it vacancy alert, 
+Mid : job seeker
+Mid : job poster
+Right : about us

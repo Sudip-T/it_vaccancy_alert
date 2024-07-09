@@ -19,39 +19,36 @@ def create_listing(request):
 
 
 def listings(request):
-    # pass
     jobs = JobListing.objects.all()
     return render(request, 'dashboard.html', {'jobs': jobs})
 
 
 def screenshotview(request, job_id):
-    # pass
     job = get_object_or_404(JobListing, pk=job_id)
-    return render(request, 'screenshot.html', {'job': job})
+    company = job.company
+    return render(request, 'screenshot.html', {'job': job, 'company':company})
 
 
 def take_screenshot(request, job_id):
-    # pass
     response = TakeScreenshot().take_screenshot(job_id)
     return HttpResponse(response)
 
 
 def job_listing_details(request, job_listing_id):
-    pass
-#     job_listing = get_object_or_404(JobListing, pk=job_listing_id)
-#     job_details = job_listing.details
-#     qualifications = job_details.qualifications.split('\n')
-#     responsibilities = job_details.responsibilities.split('\n')
-#     additional_info = job_details.additional_information.split('\n')
+    job_listing = get_object_or_404(JobListing, pk=job_listing_id)
+    job_details = job_listing
+    qualifications = job_details.qualifications.split('\n')
+    responsibilities = job_details.responsibilities.split('\n')
+    additional_info = job_details.additional_information.split('\n')
 
-#     context = {
-#         'job_listing': job_details.job_listing,
-#         'job_details': job_details,
-#         'qualifications_list': qualifications,
-#         'responsibilities': responsibilities,
-#         'additional_info': additional_info,
-#     }
-#     return render(request, 'job_detail.html', context)
+    context = {
+        'job_listing': job_details,
+        'job_details': job_details,
+        'qualifications_list': qualifications,
+        'responsibilities': responsibilities,
+        'additional_info': additional_info,
+    }
+    return render(request, 'job_detail.html', context)
 
 
 def screenshot(request):

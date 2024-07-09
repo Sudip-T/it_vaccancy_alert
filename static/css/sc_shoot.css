@@ -24,7 +24,7 @@ body {
 .content {
     color: white;
     position: relative;
-    background: url('/static/img/hiring_7.png') no-repeat center center;
+    background: url('/static/img/hiring_email.png') no-repeat center center;
     background-size: cover;
     width: 600px; 
     height: 800px;
