@@ -30,9 +30,10 @@ class Company(models.Model):
 class JobListing(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     position = models.CharField(max_length=100)
-    experience = models.PositiveIntegerField(validators=[MaxValueValidator(30)])
+    experience = models.CharField(max_length=10, help_text='2-3 Years')
     Employement_type  = models.CharField(max_length=50, choices=[
         ('Full-Time', 'Full-Time'), 
+        ('On-site Full-Time', 'On-site Full-Time'), 
         ('Part-Time', 'Part-Time'), 
         ('Remote', 'Remote'), 
         ('Internship', 'Internship')
@@ -44,17 +45,17 @@ class JobListing(models.Model):
         ('Team Lead', 'Team Lead'),
         ('Project Manager', 'Project Manager')
     ])
-    about_job = models.TextField()
     salary = models.CharField(max_length=100, default='Negotiable/Not Disclosed')
     deadline = models.DateTimeField(blank=True, null=True)
     date_published = models.DateTimeField(auto_now_add=True)
     application_link = models.URLField(blank=True, null=True)
     application_email = models.EmailField(blank=True, null=True)
-    no_of_vaccancy = models.CharField(max_length=10, default=1)
+    no_of_vaccancy = models.CharField(max_length=5,blank=True, null=True)
     education_level = models.CharField(max_length=100, blank=True, null=True)
 
     vac_img = models.ImageField(upload_to='vaccancy', null=True, blank=True)
 
+    about_job = models.TextField()
     qualifications = models.TextField()
     responsibilities = models.TextField(blank=True, null=True)
     technical_skills = models.TextField(blank=True, null=True)
