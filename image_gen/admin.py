@@ -1,8 +1,12 @@
 from django.contrib import admin
-from .models import JobListing, Company, Industry
+from .models import JobListing, Company, Industry, AdditionalInfo
 
 
 admin.site.register(Industry)
+
+@admin.register(AdditionalInfo)
+class AdditionalInfoAdmin(admin.ModelAdmin):
+    list_display = ('header',)
 
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):

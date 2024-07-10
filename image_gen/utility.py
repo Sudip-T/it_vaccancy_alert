@@ -22,7 +22,7 @@ class WebDriverManager:
             options.add_experimental_option('excludeSwitches', ['enable-automation'])
             options.add_experimental_option('useAutomationExtension', False)
             options.add_argument('--disable-infobars')
-            options.add_argument('--headless')
+            # options.add_argument('--headless')
             service = Service(ChromeDriverManager().install())
             self.driver = webdriver.Chrome(service=service, options=options)
             # self.driver.maximize_window()

@@ -25,6 +25,7 @@ def listings(request):
 
 def screenshotview(request, job_id):
     job = get_object_or_404(JobListing, pk=job_id)
+    print(job.add_info.all())
     company = job.company
     return render(request, 'screenshot.html', {'job': job, 'company':company})
 

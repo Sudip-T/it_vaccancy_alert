@@ -30,7 +30,7 @@ class Company(models.Model):
 class JobListing(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     position = models.CharField(max_length=100)
-    experience = models.CharField(max_length=10, help_text='2-3 Years')
+    experience = models.CharField(max_length=100, help_text='2-3 Years')
     Employement_type  = models.CharField(max_length=50, choices=[
         ('Full-Time', 'Full-Time'), 
         ('On-site Full-Time', 'On-site Full-Time'), 
@@ -60,47 +60,24 @@ class JobListing(models.Model):
     responsibilities = models.TextField(blank=True, null=True)
     technical_skills = models.TextField(blank=True, null=True)
     benefits = models.TextField(blank=True, null=True)
-    additional_information = models.TextField(blank=True, null=True)
+    # additional_information = models.TextField(blank=True, null=True)
+    # additional_info = models.ForeignKey('AdditionalInfo', on_delete=models.SET_NULL, null=True, blank=True)
 
     # jobmetrics
     Job_views = models.PositiveIntegerField(default=0)
     application_count = models.PositiveIntegerField(default=0)
-    
-
 
     def __str__(self):
         return f"{self.position} at {self.company.name}"
-
-
-# class JobListing(models.Model):
-#     position = models.CharField(max_length=100)
-#     company = models.CharField(max_length=100)
-#     experience = models.CharField(max_length=100)
-#     job_type = models.CharField(max_length=100)
-#     location = models.CharField(max_length=100)
-#     date_published = models.DateTimeField(blank=True, null=True)
-#     deadline = models.DateTimeField(blank=True, null=True)
-#     date_added = models.DateTimeField(auto_now_add=True)
-#     salary = models.CharField(max_length=100, default='Negotiable')
-#     no_of_vaccancy = models.CharField(max_length=10, default=1)
-#     career_level = models.CharField(max_length=100, default='Junior')
-#     vac_img = models.ImageField(upload_to='vaccancy', null=True, blank=True)
-#     company_logo = models.ImageField(upload_to='company_logo', null=True, blank=True)
-#     apply_at = models.CharField(max_length=500, null=True, blank=True)
-
-#     def __str__(self):
-#         return self.position
     
+    class Meta:
+        ordering = ['-id']
 
 
-# class JobDetails(models.Model):
-#     job_listing = models.OneToOneField(JobListing, on_delete=models.CASCADE, related_name='details')
-#     company_description = models.TextField()
-#     job_description = models.TextField()
-#     technical_skills = models.TextField()
-#     responsibilities = models.TextField()
-#     qualifications = models.TextField()
-#     additional_information = models.TextField()
+class AdditionalInfo(models.Model):
+    content = models.TextField()
+    header = models.CharField(max_length=200)
+    job = models.ForeignKey(JobListing, on_delete=models.CASCADE, related_name='add_info')
 
-#     def __str__(self):
-#         return f"Details for {self.job_listing.position} at {self.job_listing.company}"
+    def __str__(self):
+        return self.header
