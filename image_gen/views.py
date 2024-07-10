@@ -37,16 +37,16 @@ def take_screenshot(request, job_id):
 
 def job_listing_details(request, job_listing_id):
     job_listing = get_object_or_404(JobListing, pk=job_listing_id)
-    job_details = job_listing
-    qualifications = job_details.qualifications.split('\n')
-    responsibilities = job_details.responsibilities.split('\n')
-    additional_info = job_details.additional_information.split('\n')
+    additional_info = job_listing.add_info.all()
+    # qualifications = job_details.qualifications.split('\n')
+    # responsibilities = job_details.responsibilities.split('\n')
+    # additional_info = job_details.additional_information.split('\n')
 
     context = {
-        'job_listing': job_details,
-        'job_details': job_details,
-        'qualifications_list': qualifications,
-        'responsibilities': responsibilities,
+        'job_listing': job_listing,
+        # 'job_details': job_details,
+        # 'qualifications_list': qualifications,
+        # 'responsibilities': responsibilities,
         'additional_info': additional_info,
     }
     return render(request, 'job_detail.html', context)
@@ -55,3 +55,7 @@ def job_listing_details(request, job_listing_id):
 def screenshot(request):
     pass
 #     return HttpResponse('hello')
+
+
+def gett(request):
+    return render(request, 'gett.html')

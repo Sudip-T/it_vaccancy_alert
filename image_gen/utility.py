@@ -79,4 +79,3 @@ class TakeScreenshot(WebDriverManager):
             job_listing = get_object_or_404(JobListing, id=id)
             job_listing.vac_img = img
             job_listing.save()
-

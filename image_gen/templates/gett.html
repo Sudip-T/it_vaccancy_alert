@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Job Vacancies</title>
+    <!-- Include necessary stylesheets or CSS here -->
+</head>
+
+<body>
+    <div id="job-list">
+        <!-- Job vacancies will be dynamically inserted here -->
+    </div>
+
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '/api/v1/job-vaccancy/',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    data.forEach(function (job) {
+                        var jobHtml = `
+                    <div class="job">
+                        <h2>${job.position}</h2>
+                        <p><strong>Experience:</strong> ${job.experience}</p>
+                        <p><strong>Employment Type:</strong> ${job.Employement_type}</p>
+                        <p><strong>Seniority Level:</strong> ${job.Seniority_level}</p>
+                        <p><strong>Salary:</strong> ${job.salary}</p>
+                        <p><strong>No. of Vacancies:</strong> ${job.no_of_vaccancy}</p>
+                        <p><strong>Education Level:</strong> ${job.education_level}</p>
+                        <img src="${job.vac_img}" alt="${job.position}" class="job-image">
+                        <p><strong>About the Job:</strong> ${job.about_job}</p>
+                        <p><strong>Qualifications:</strong> ${job.qualifications}</p>
+                        <p><strong>Responsibilities:</strong> ${job.responsibilities}</p>
+                        <p><strong>Technical Skills:</strong> ${job.technical_skills}</p>
+                        <p><strong>Benefits:</strong> ${job.benefits}</p>
+                    </div>
+                `;
+                        // Append each job HTML to a container in your HTML
+                        $('#job-list').append(jobHtml);
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error fetching job listings:', error);
+                }
+            });
+        });
+    </script>
+    <!-- Your custom JavaScript file -->
+    <script src="path/to/your/custom/script.js"></script>
+</body>
+
+</html>

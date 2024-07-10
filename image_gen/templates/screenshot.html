@@ -18,15 +18,17 @@
             <div class="d-left">
                 <div class="job-details">
                     <h2 class="position-title">{{ job.position }}</h2>
-                    <h3 class="mtb-10">{{ company.name }}</h3>
+                    <h3 class="mtb-10" style="font-size: 20px !important;">{{ company.name }}</h3>
                     <p>Job Type : {{ job.Employement_type }}</p>
                     <p>Location : {{ company.address }}</p>
                     <p>Experience : {{ job.experience }}</p>
                 </div>
                 <div class="contact">
-                    <p class="cp">Find More Information Here</p>
+                    <p class="cp">Send your resume</p>
                     {% if job.application_email %}
                     <p class="cd"><a href="mailto:vacancy@codehimalaya.net">{{job.application_email}}</a></p>
+                    {% elif company.email %}
+                    <p class="cd"><a href="mailto:vacancy@codehimalaya.net">{{company.email}}</a></p>
                     {% elif company.website %}
                     <p class="cd"><a href="mailto:vacancy@codehimalaya.net">{{company.website}}</a></p>
                     {% endif %}
