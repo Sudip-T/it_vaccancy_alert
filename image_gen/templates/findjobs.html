@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Example</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Your custom CSS -->
+    <style>
+        /* .box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 100%;
+
+            display: flex;
+ 
+            flex-direction: column;
+
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .container {
+            margin: 20px auto;
+        }
+
+        .row {
+            display: flex;
+
+        }
+
+        .col {
+            flex: 1;
+
+            margin-right: 10px;
+
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+
+            }
+        } */
+         /* Style job listing container */
+.styles_job-listing-container__OCfZC {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Style individual job tuple */
+.cust-job-tuple {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+/* Style job title */
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.title:hover {
+    text-decoration: underline;
+}
+
+/* Style company name */
+.comp-name {
+    color: #0077cc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.comp-name:hover {
+    text-decoration: underline;
+}
+
+/* Style job details */
+.job-details {
+    margin-top: 10px;
+}
+
+.exp-wrap, .sal-wrap, .loc-wrap {
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Style job description */
+.job-desc {
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Style tags */
+.tags-gt {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.tag-li {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #666;
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+/* Style save job button */
+.save-job-tag {
+    font-size: 0.8rem;
+    color: #0077cc;
+    cursor: pointer;
+}
+
+.save-job-tag:hover {
+    text-decoration: underline;
+}
+
+/* Style top company filter section */
+.styles_bellyFilter__mEi9S {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.styles_bellyFilterComp__xYmcV {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.styles_topCompany-img-container__dT8Wr img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.styles_title__l6QIj {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.styles_count-text__X3ib7 {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="box">
+                    <h2>Column 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel velit vestibulum.</p>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="box">
+                    <h2>Column 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel velit vestibulum.</p>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="box">
+                    <h2>Column 3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel velit vestibulum.</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="styles_srpc__content__h6cyr">
+
+        <div class="styles_middle-section-container__iteRZ" id="listContainer"><span
+                class="styles_failover-shimmer__0wkQi"></span>
+            <div id="jobs-list-header" class="styles_job-list-header-container__I1rGR">
+                <div class="styles_h1-wrapper__mHVA1"><span class="styles_count-string__DlPaZ"
+                        title="1 - 20 of 27182 ">1 - 20 of 27182 </span>
+                    <h1 class="styles_h1-content__MdLE_" title="It Jobs">It Jobs</h1>
+                </div>
+                <div class="styles_jlh__sort-cont__xtRva"><a class="styles_jlh__save-alert-btn__874Eg">Send me jobs like
+                        these</a><span class="styles_sort-by-container__ATT7x"><span
+                            class="styles_sort-by-text__SRARK">Sort by<span class="styles_blackTxt__r_Q0f">:
+                            </span></span>
+                        <div class="styles_single-select-wrapper__WkB22"><button
+                                class="styles_ss__menu-btn__4s9fF styles_sort-droop-label__TxC3K" id="filter-sort"
+                                type="text" title="Relevance"><span>Relevance</span><i
+                                    class="ni-icon-arrow-down"></i></button>
+                            <ul data-filter-id="sort" class="styles_ss__menu__9TuCu styles_sort-droop-list__BmFFW"
+                                style="top: 125%; left: 0px; bottom: unset; visibility: hidden; pointer-events: all;">
+                                <li class="styles_ss__menu-item__T4rgB" title="Relevance"><a
+                                        data-id="filter-sort-r"><span>Relevance</span></a></li>
+                                <li class="styles_ss__menu-item__T4rgB" title="Date"><a
+                                        data-id="filter-sort-f"><span>Date</span></a></li>
+                            </ul>
+                        </div>
+                    </span></div>
+            </div>
+            <div class="styles_job-listing-container__OCfZC">
+                <div class="styles_jlc__main__VdwtF">
+                    <div class="srp-jobtuple-wrapper" data-job-id="100724009712">
+                        <div class="cust-job-tuple layout-wrapper lay-2 sjw__tuple ">
+                            <div class=" row1"><a class="title " title="Sap Basis Consultant"
+                                    href="https://www.naukri.com/job-listings-sap-basis-consultant-tata-consultancy-services-pune-bengaluru-mumbai-all-areas-6-to-10-years-100724009712"
+                                    target="_blank" rel="noopener noreferrer">Sap Basis Consultant</a><span
+                                    class="imagewrap "><img src="https://img.naukri.com/logo_images/v3/892542.gif"
+                                        class="logoImage" loading="lazy"></span></div>
+                            <div class=" row2"><span class=" comp-dtls-wrap"><a class=" comp-name mw-25"
+                                        title="Tata Consultancy Services"
+                                        href="https://www.naukri.com/tata-consultancy-services-jobs-careers-13542"
+                                        target="_blank">Tata Consultancy Services</a><a class="rating"
+                                        href="https://www.ambitionbox.com/reviews/tcs-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
+                                        target="_blank" title="Powered by Ambition Box"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star star"></span><span
+                                            class="main-2">3.8</span><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star"></span></a><a
+                                        class=" review ver-line"
+                                        href="https://www.ambitionbox.com/reviews/tcs-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
+                                        target="_blank" title="Powered by Ambition Box">77645 Reviews</a></span></div>
+                            <div class=" row3">
+                                <div class="job-details "><span class="exp-wrap"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-experience exp"><span
+                                                title="6-10 Yrs " class="expwdth">6-10 Yrs</span></span></span><span
+                                        class="sal-wrap ver-line"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-rupee sal"><span
+                                                title="Not disclosed " class="">Not disclosed</span></span></span><span
+                                        class="loc-wrap ver-line"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-location loc"><span
+                                                title="Pune, Bengaluru, Mumbai (All Areas) " class="locWdth">Pune,
+                                                Bengaluru, Mumbai (All Areas)</span></span></span></div>
+                            </div>
+                            <div class=" row4"><span
+                                    class="job-desc ni-job-tuple-icon ni-job-tuple-icon-srp-description">Monitor support
+                                    and perform troubleshooting steps for SAP application landscape, the as...</span>
+                            </div>
+                            <div class=" row5">
+                                <ul class="tags-gt ">
+                                    <li class="dot-gt tag-li ">SAP Basis</li>
+                                    <li class="dot-gt tag-li ">Unix</li>
+                                    <li class="dot-gt tag-li ">oracle</li>
+                                    <li class="dot-gt tag-li ">Basis</li>
+                                    <li class="dot-gt tag-li ">SAP</li>
+                                    <li class="dot-gt tag-li ">Consulting</li>
+                                </ul>
+                            </div>
+                            <div class=" row6"> <span class="job-post-day ">1 Day Ago</span><span
+                                    class="ni-job-tuple-icon ni-job-tuple-icon-srpSaveUnfilled un-saved save-job-tag">save</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="srp-jobtuple-wrapper" data-job-id="280624006376">
+                        <div class="cust-job-tuple layout-wrapper lay-2 sjw__tuple ">
+                            <div class=" row1"><a class="title " title="Oracle Integration Cloud Consultant"
+                                    href="https://www.naukri.com/job-listings-oracle-integration-cloud-consultant-birlasoft-pune-bengaluru-mumbai-all-areas-7-to-12-years-280624006376"
+                                    target="_blank" rel="noopener noreferrer">Oracle Integration Cloud
+                                    Consultant</a><span class="imagewrap "><img
+                                        src="https://img.naukimg.com/logo_images/groups/v1/219806.gif" class="logoImage"
+                                        loading="lazy"></span></div>
+                            <div class=" row2"><span class=" comp-dtls-wrap"><a class=" comp-name mw-25"
+                                        title="Birlasoft" href="https://www.naukri.com/birlasoft-jobs-careers-152"
+                                        target="_blank">Birlasoft</a><a class="rating"
+                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
+                                        target="_blank" title="Powered by Ambition Box"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star star"></span><span
+                                            class="main-2">3.8</span><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star"></span></a><a
+                                        class=" review ver-line"
+                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
+                                        target="_blank" title="Powered by Ambition Box">2443 Reviews</a></span></div>
+                            <div class=" row3">
+                                <div class="job-details "><span class="exp-wrap"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-experience exp"><span
+                                                title="7-12 Yrs " class="expwdth">7-12 Yrs</span></span></span><span
+                                        class="sal-wrap ver-line"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-rupee sal"><span
+                                                title="Not disclosed " class="">Not disclosed</span></span></span><span
+                                        class="loc-wrap ver-line"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-location loc"><span
+                                                title="Hybrid - Pune, Bengaluru, Mumbai (All Areas) "
+                                                class="locWdth">Hybrid - Pune, Bengaluru, Mumbai (All
+                                                Areas)</span></span></span></div>
+                            </div>
+                            <div class=" row4"><span
+                                    class="job-desc ni-job-tuple-icon ni-job-tuple-icon-srp-description">Well versed in
+                                    calling and consuming RESTful APIs, connecting to file systems, loading,...</span>
+                            </div>
+                            <div class=" row5">
+                                <ul class="tags-gt ">
+                                    <li class="dot-gt tag-li ">Oic</li>
+                                    <li class="dot-gt tag-li ">Oracle Integration Cloud</li>
+                                    <li class="dot-gt tag-li ">Bi Publisher</li>
+                                    <li class="dot-gt tag-li ">Oracle</li>
+                                    <li class="dot-gt tag-li ">Oracle Configurator</li>
+                                    <li class="dot-gt tag-li ">Consulting</li>
+                                    <li class="dot-gt tag-li ">Bi</li>
+                                    <li class="dot-gt tag-li ">Cloud</li>
+                                </ul>
+                            </div>
+                            <div class=" row6"> <span class="job-post-day ">Just Now</span><span
+                                    class="ni-job-tuple-icon ni-job-tuple-icon-srpSaveUnfilled un-saved save-job-tag">save</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="srp-jobtuple-wrapper" data-job-id="280624006343">
+                        <div class="cust-job-tuple layout-wrapper lay-2 sjw__tuple ">
+                            <div class=" row1"><a class="title " title="Saas Paas Architect"
+                                    href="https://www.naukri.com/job-listings-saas-paas-architect-birlasoft-pune-bengaluru-mumbai-all-areas-12-to-19-years-280624006343"
+                                    target="_blank" rel="noopener noreferrer">Saas Paas Architect</a><span
+                                    class="imagewrap "><img
+                                        src="https://img.naukimg.com/logo_images/groups/v1/219806.gif" class="logoImage"
+                                        loading="lazy"></span></div>
+                            <div class=" row2"><span class=" comp-dtls-wrap"><a class=" comp-name mw-25"
+                                        title="Birlasoft" href="https://www.naukri.com/birlasoft-jobs-careers-152"
+                                        target="_blank">Birlasoft</a><a class="rating"
+                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
+                                        target="_blank" title="Powered by Ambition Box"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star star"></span><span
+                                            class="main-2">3.8</span><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star"></span></a><a
+                                        class=" review ver-line"
+                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
+                                        target="_blank" title="Powered by Ambition Box">2443 Reviews</a></span></div>
+                            <div class=" row3">
+                                <div class="job-details "><span class="exp-wrap"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-experience exp"><span
+                                                title="12-19 Yrs " class="expwdth">12-19 Yrs</span></span></span><span
+                                        class="sal-wrap ver-line"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-rupee sal"><span
+                                                title="Not disclosed " class="">Not disclosed</span></span></span><span
+                                        class="loc-wrap ver-line"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-location loc"><span
+                                                title="Hybrid - Pune, Bengaluru, Mumbai (All Areas) "
+                                                class="locWdth">Hybrid - Pune, Bengaluru, Mumbai (All
+                                                Areas)</span></span></span></div>
+                            </div>
+                            <div class=" row4"><span
+                                    class="job-desc ni-job-tuple-icon ni-job-tuple-icon-srp-description">Hi AllWe are
+                                    looking for Saas Paas Architect. Please find below details;Years of exp-12...</span>
+                            </div>
+                            <div class=" row5">
+                                <ul class="tags-gt ">
+                                    <li class="dot-gt tag-li ">SAAS</li>
+                                    <li class="dot-gt tag-li ">PAAS</li>
+                                    <li class="dot-gt tag-li ">Oracle E-business Suite</li>
+                                    <li class="dot-gt tag-li ">VBCS</li>
+                                </ul>
+                            </div>
+                            <div class=" row6"> <span class="job-post-day ">Just Now</span><span
+                                    class="ni-job-tuple-icon ni-job-tuple-icon-srpSaveUnfilled un-saved save-job-tag">save</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="srp-jobtuple-wrapper" data-job-id="110724012244">
+                        <div class="cust-job-tuple layout-wrapper lay-2 sjw__tuple ">
+                            <div class=" row1"><a class="title " title="Ebs Technical Consultant"
+                                    href="https://www.naukri.com/job-listings-ebs-technical-consultant-birlasoft-hyderabad-pune-mumbai-all-areas-6-to-10-years-110724012244"
+                                    target="_blank" rel="noopener noreferrer">Ebs Technical Consultant</a><span
+                                    class="imagewrap "></span></div>
+                            <div class=" row2"><span class=" comp-dtls-wrap"><a class=" comp-name mw-25"
+                                        title="Birlasoft" href="https://www.naukri.com/birlasoft-jobs-careers-152"
+                                        target="_blank">Birlasoft</a><a class="rating"
+                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
+                                        target="_blank" title="Powered by Ambition Box"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star star"></span><span
+                                            class="main-2">3.8</span><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star"></span></a><a
+                                        class=" review ver-line"
+                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
+                                        target="_blank" title="Powered by Ambition Box">2443 Reviews</a></span></div>
+                            <div class=" row3">
+                                <div class="job-details "><span class="exp-wrap"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-experience exp"><span
+                                                title="6-10 Yrs " class="expwdth">6-10 Yrs</span></span></span><span
+                                        class="sal-wrap ver-line"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-rupee sal"><span
+                                                title="Not disclosed " class="">Not disclosed</span></span></span><span
+                                        class="loc-wrap ver-line"><span
+                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-location loc"><span
+                                                title="Hybrid - Hyderabad, Pune, Mumbai (All Areas) "
+                                                class="locWdth">Hybrid - Hyderabad, Pune, Mumbai (All
+                                                Areas)</span></span></span></div>
+                            </div>
+                            <div class=" row4"><span
+                                    class="job-desc ni-job-tuple-icon ni-job-tuple-icon-srp-description">About
+                                    Birlasoft- Birlasoft, a global leader at the forefront of Cloud, AI, and Digital
+                                    ...</span></div>
+                            <div class=" row5">
+                                <ul class="tags-gt ">
+                                    <li class="dot-gt tag-li ">Vertex</li>
+                                    <li class="dot-gt tag-li ">GL</li>
+                                    <li class="dot-gt tag-li ">EBS</li>
+                                    <li class="dot-gt tag-li ">Ap</li>
+                                    <li class="dot-gt tag-li ">Consulting</li>
+                                    <li class="dot-gt tag-li ">Technical</li>
+                                    <li class="dot-gt tag-li ">Eb</li>
+                                </ul>
+                            </div>
+                            <div class=" row6"> <span class="job-post-day ">Just Now</span><span
+                                    class="ni-job-tuple-icon ni-job-tuple-icon-srpSaveUnfilled un-saved save-job-tag">save</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="styles_bellyFilter__mEi9S styles_topGroupId__Ic_wT" data-filter-id="topGroupId">
+                        <p class="styles_heading__Hyg7j"><img alt="naukri filter icon" loading="lazy" width="24"
+                                height="24" decoding="async" data-nimg="1"
+                                srcset="https://static.naukimg.com/s/9/121/_next/static/media/belly-filter-company.4c699b11.svg 1x, https://static.naukimg.com/s/9/121/_next/static/media/belly-filter-company.4c699b11.svg 2x"
+                                src="https://static.naukimg.com/s/9/121/_next/static/media/belly-filter-company.4c699b11.svg"
+                                style="color: transparent;"><span class="styles_heading-cta__2URrL">Filter jobs
+                                by</span><span class="styles_heading-key__7VZMV">Top Companies</span></p>
+                        <div>
+                            <div class="styles_bellyFilterComp__xYmcV">
+                                <div class="styles_topCompany-img-container__dT8Wr"><img alt="10476" loading="lazy"
+                                        width="40" height="40" decoding="async" data-nimg="1"
+                                        srcset="//img.naukimg.com/logo_images/groups/v1/10476.gif 1x, //img.naukimg.com/logo_images/groups/v1/10476.gif 2x"
+                                        src="https://img.naukimg.com/logo_images/groups/v1/10476.gif"
+                                        style="color: transparent;"></div>
+                                <div class="styles_bellyFilterInfo__vrsqD">
+                                    <p class="styles_title__l6QIj" title="Accenture">Accenture</p>
+                                    <p class="styles_count-text__X3ib7">7571 Jobs</p>
+                                </div>
+                            </div>
+                            <div class="styles_bellyFilterComp__xYmcV">
+                                <div class="styles_topCompany-img-container__dT8Wr"><img alt="13832" loading="lazy"
+                                        width="40" height="40" decoding="async" data-nimg="1"
+                                        srcset="//img.naukimg.com/logo_images/groups/v1/13832.gif 1x, //img.naukimg.com/logo_images/groups/v1/13832.gif 2x"
+                                        src="https://img.naukimg.com/logo_images/groups/v1/13832.gif"
+                                        style="color: transparent;"></div>
+                                <div class="styles_bellyFilterInfo__vrsqD">
+                                    <p class="styles_title__l6QIj" title="Infosys">Infosys</p>
+                                    <p class="styles_count-text__X3ib7">611 Jobs</p>
+                                </div>
+                            </div>
+                            <div class="styles_bellyFilterComp__xYmcV">
+                                <div class="styles_topCompany-img-container__dT8Wr"><img alt="19288" loading="lazy"
+                                        width="40" height="40" decoding="async" data-nimg="1"
+                                        srcset="//img.naukimg.com/logo_images/groups/v1/19288.gif 1x, //img.naukimg.com/logo_images/groups/v1/19288.gif 2x"
+                                        src="https://img.naukimg.com/logo_images/groups/v1/19288.gif"
+                                        style="color: transparent;"></div>
+                                <div class="styles_bellyFilterInfo__vrsqD">
+                                    <p class="styles_title__l6QIj" title="IBM">IBM</p>
+                                    <p class="styles_count-text__X3ib7">544 Jobs</p>
+                                </div>
+                            </div>
+                            <div class="styles_bellyFilterComp__xYmcV">
+                                <div class="styles_topCompany-img-container__dT8Wr"><img alt="142780" loading="lazy"
+                                        width="40" height="40" decoding="async" data-nimg="1"
+                                        srcset="//img.naukimg.com/logo_images/groups/v1/142780.gif 1x, //img.naukimg.com/logo_images/groups/v1/142780.gif 2x"
+                                        src="https://img.naukimg.com/logo_images/groups/v1/142780.gif"
+                                        style="color: transparent;"></div>
+                                <div class="styles_bellyFilterInfo__vrsqD">
+                                    <p class="styles_title__l6QIj" title="Hitachi">Hitachi</p>
+                                    <p class="styles_count-text__X3ib7">362 Jobs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

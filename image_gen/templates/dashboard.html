@@ -6,13 +6,17 @@
 
 <main>
     <div class="search-section">
-        <h1>The Easiest Way to Get Your New Job</h1>
-        <p>We offer many job vacancies right now</p>
-        <form class="search-form">
-            <input type="text" placeholder="Job Keyword">
-            <input type="text" placeholder="Location">
-            <button type="submit">SEARCH</button>
-        </form>
+        <h1>Discover the Latest Job Vacancies Now</h1>
+        <p>Stay ahead with our curated job alerts, sourcing top vacancies for your next career move</p>
+        <div class="wrap">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="enter job title, keyword or phrase... ">
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+
     </div>
     <div class="job-section">
         <div class="tabs">
@@ -34,7 +38,11 @@
             {% endfor %}
         </div>
     </div>
+    <div class="banner-text">
+        <h2>Stand Out and Let Opportunities Find You!</h2>
+        <p>Unlock Countless Opportunities. Customize Your Search and Discover Your Perfect Career Fit</p>
+        <a href="#" class="button">Find Job</a>
+    </div>
 </main>
 
 {% endblock %}
-

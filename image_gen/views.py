@@ -61,5 +61,9 @@ def gett(request):
     return render(request, 'gett.html')
 
 def fb_post(request, job_id):
-    # PostOnFacebook(job_id)
     return HttpResponse (PostOnFacebook(job_id).run())
+
+
+def findjobs(request):
+    return render(request, 'findjobs.html')
+    return HttpResponse ('hello this is find jobs')

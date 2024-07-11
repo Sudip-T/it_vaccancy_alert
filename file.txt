@@ -62,3 +62,32 @@ Quick links
 Privacy policy
 Terms and conditions
 Fraud alert
+
+
+
+
+job_drtails :
+left - job details
+right  - more job by same company if any => other recent jobs/ similar jobs
+Are you interested in this Job?
+Application ends:
+July 14, 2024
+Apply NowEasy Apply (view internsathi-job details)
+
+
+right - overview - more jobs from this company - similar jobs (ref : ref_12.png)
+
+
+
+find jobs
+left - Filtering
+middle - first job details
+right 
+
+
+dashboard
+- banner and search (ref 6)
+- popular jobs
+
+
+just above footer -ref neco jobs

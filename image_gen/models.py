@@ -1,5 +1,17 @@
 from django.db import models
 from django.core.validators import MaxValueValidator
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
+
+
+def validate_year_format(value):
+    try:
+        int(value)
+    except ValueError:
+        raise ValidationError(
+            _('Year must be a valid integer.'),
+            params={'value': value},
+        )
 
 
 class Industry(models.Model):
@@ -16,7 +28,7 @@ class Company(models.Model):
     website = models.URLField(blank=True, null=True)
     address = models.CharField(max_length=200, blank=True, null=True)
     phone_number = models.CharField(max_length=20, blank=True, null=True)
-    established_date = models.DateField(blank=True, null=True)
+    established_date = models.CharField(max_length=4, validators=[validate_year_format], blank=True, null=True, help_text='Enter the year in YYYY format')
     size = models.CharField(max_length=50, blank=True, null=True)
     logo = models.ImageField(upload_to='company_logos/', blank=True, null=True)
     industry = models.ForeignKey(Industry, on_delete=models.SET_NULL, null=True, blank=True)
@@ -25,6 +37,21 @@ class Company(models.Model):
     def __str__(self):
         return self.name
     
+    def save(self, *args, **kwargs):
+        if self.established_date:
+            try:
+                int(self.established_date)
+            except ValueError:
+                raise ValidationError(_('Invalid year format. Please enter a valid year in YYYY format.'))
+        super().save(*args, **kwargs)
+
+    def established_year(self):
+        return self.established_date
+
+    def clean(self):
+        super().clean()
+        if self.established_date and len(self.established_date) != 4:
+            raise ValidationError(_('Year must be in YYYY format.'))
 
 
 class JobListing(models.Model):
@@ -34,6 +61,8 @@ class JobListing(models.Model):
     Employement_type  = models.CharField(max_length=50, choices=[
         ('Full-Time', 'Full-Time'), 
         ('On-site Full-Time', 'On-site Full-Time'), 
+        ('On-site Part-Time', 'On-site Part-Time'), 
+        ('Hybrid Full-Time', 'Hybrid Full-Time'), 
         ('Part-Time', 'Part-Time'), 
         ('Remote', 'Remote'), 
         ('Internship', 'Internship')
@@ -44,7 +73,7 @@ class JobListing(models.Model):
         ('Senior', 'Senior'), 
         ('Team Lead', 'Team Lead'),
         ('Project Manager', 'Project Manager')
-    ])
+    ], blank=True, null=True,)
     salary = models.CharField(max_length=100, default='Negotiable/Not Disclosed')
     deadline = models.DateTimeField(blank=True, null=True)
     date_published = models.DateTimeField(auto_now_add=True)
