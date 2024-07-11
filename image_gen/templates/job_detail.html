@@ -8,12 +8,13 @@
     <div class="container job-details">
         <div class="job-description">
             <div class="company-banner">
-                <img src="path/to/company-banner.jpg" alt="Company Banner">
+                <img src="" alt="">
             </div>
             <div class="company-details">
                 <h2>{{job_listing.company}}</h2>
                 <p>Software Industry - Lalitpur</p>
                 <p>{{job_listing.company_description}}</p>
+                <p id="fb_post" data-job-id="{{ job_listing.id }}">post on facebook</p>
             </div>
             <div class="job-info">
                 <h2>{{job.position}}</h2>
@@ -120,4 +121,27 @@
         </div>
     </div>
 </main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#fb_post').click(function(){
+            console.log('clicked.....')
+            var jobID = $(this).data('job-id');
+            var urlE = '/job/fb-post/'+ jobID + '/';
+            $.ajax({
+                url:urlE,
+                type:'GET',
+                success:function(response){
+                    console.log(response)
+                },
+                error:function(xhr, status, error){
+                    console.log(error)
+                }
+            })
+        })
+    })
+</script>
 {% endblock %}

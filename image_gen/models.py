@@ -55,14 +55,6 @@ class JobListing(models.Model):
 
     vac_img = models.ImageField(upload_to='vaccancy', null=True, blank=True)
 
-    about_job = models.TextField()
-    qualifications = models.TextField()
-    responsibilities = models.TextField(blank=True, null=True)
-    technical_skills = models.TextField(blank=True, null=True)
-    benefits = models.TextField(blank=True, null=True)
-    # additional_information = models.TextField(blank=True, null=True)
-    # additional_info = models.ForeignKey('AdditionalInfo', on_delete=models.SET_NULL, null=True, blank=True)
-
     # jobmetrics
     Job_views = models.PositiveIntegerField(default=0)
     application_count = models.PositiveIntegerField(default=0)

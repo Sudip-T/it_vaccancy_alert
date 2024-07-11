@@ -6,7 +6,11 @@ admin.site.register(Industry)
 
 @admin.register(AdditionalInfo)
 class AdditionalInfoAdmin(admin.ModelAdmin):
-    list_display = ('header',)
+    list_display = ('header','job_position')
+
+    def job_position(self, obj):
+        return f'{obj.job.position} - {obj.job.company.name}'
+    job_position.short_description = 'Job Position'
 
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):

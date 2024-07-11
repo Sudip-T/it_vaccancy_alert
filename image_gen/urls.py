@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.listings, name='listings'),
+    path('job/fb-post/<int:job_id>/', views.fb_post, name='fb_post'),
     path('gett/', views.gett, name='gett'),
     path('screenshot/', views.screenshot, name='screenshot'),
     path('create/', views.create_listing, name='create_listing'),

@@ -2,7 +2,7 @@ from .models import JobListing
 # from .forms import JobForm
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .utility import TakeScreenshot
+from .utility import TakeScreenshot, PostOnFacebook
 
 
 def create_listing(request):
@@ -59,3 +59,7 @@ def screenshot(request):
 
 def gett(request):
     return render(request, 'gett.html')
+
+def fb_post(request, job_id):
+    # PostOnFacebook(job_id)
+    return HttpResponse (PostOnFacebook(job_id).run())
