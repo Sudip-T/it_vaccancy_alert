@@ -1,5 +1,4 @@
 from django.db import models
-from django.core.validators import MaxValueValidator
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 
@@ -22,7 +21,7 @@ class Industry(models.Model):
     
 
 class Company(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     about = models.TextField(blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     website = models.URLField(blank=True, null=True)
@@ -61,7 +60,9 @@ class JobListing(models.Model):
     Employement_type  = models.CharField(max_length=50, choices=[
         ('Full-Time', 'Full-Time'), 
         ('On-site Full-Time', 'On-site Full-Time'), 
+        ('Remote Full-Time', 'Remote Full-Time'), 
         ('On-site Part-Time', 'On-site Part-Time'), 
+        ('Remote Part-Time', 'Remote Part-Time'), 
         ('Hybrid Full-Time', 'Hybrid Full-Time'), 
         ('Part-Time', 'Part-Time'), 
         ('Remote', 'Remote'), 

@@ -49,7 +49,7 @@ def job_listing_details(request, job_listing_id):
         # 'responsibilities': responsibilities,
         'additional_info': additional_info,
     }
-    return render(request, 'job_detail.html', context)
+    return render(request, 'job_detail_2.html', context)
 
 
 def screenshot(request):

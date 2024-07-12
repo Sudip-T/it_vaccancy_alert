@@ -28,3 +28,4 @@ class CompanyView(ModelViewSet):
 class JobListingView(ModelViewSet):
     queryset = JobListing.objects.all()
     serializer_class = JobListingSerializer
+    filterset_fields = ['company']
