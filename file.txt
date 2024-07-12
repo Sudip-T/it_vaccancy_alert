@@ -1,7 +1,7 @@
 Filtering
 Employement_type 
-Location : country, district
 Seniority_level
+Location : country, district
 Keywords : name,position,location
 
 Search

@@ -9,16 +9,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Your custom CSS -->
     <style>
-        /* .box {
+        .logoImage {
+            width: 140px;
+        }
+
+        body {
             background-color: #f9f9f9;
-            padding: 20px;
+        }
+
+        .title {
+            font-size: 1.4rem !important;
+        }
+
+        .box {
+            /* background-color: #f9f9f9; */
             margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: 100%;
+            /* height: 100%; */
 
             display: flex;
- 
+
             flex-direction: column;
 
         }
@@ -54,450 +65,838 @@
                 flex-direction: column;
 
             }
-        } */
-         /* Style job listing container */
-.styles_job-listing-container__OCfZC {
-    margin: 20px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
+        }
 
-/* Style individual job tuple */
-.cust-job-tuple {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 15px;
-    margin-bottom: 15px;
-}
+        /* Style job listing container */
+        .styles_job-listing-container__OCfZC {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
 
-/* Style job title */
-.title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    text-decoration: none;
-}
+        /* Style individual job tuple */
+        .cust-job-tuple {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 15px;
+            /* margin-bottom: 15px; */
+        }
 
-.title:hover {
-    text-decoration: underline;
-}
+        /* Style job title */
+        .title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
 
-/* Style company name */
-.comp-name {
-    color: #0077cc;
-    font-weight: bold;
-    text-decoration: none;
-}
 
-.comp-name:hover {
-    text-decoration: underline;
-}
+        .text-is-secondary {
+            color: #646464;
+        }
 
-/* Style job details */
-.job-details {
-    margin-top: 10px;
-}
+        .text-xs {
+            font-size: .75rem;
+            line-height: 1rem;
+        }
 
-.exp-wrap, .sal-wrap, .loc-wrap {
-    margin-right: 10px;
-    font-size: 0.9rem;
-    color: #555;
-}
+        .gap-2 {
+            gap: .5rem;
+        }
 
-/* Style job description */
-.job-desc {
-    color: #666;
-    margin-top: 10px;
-}
+        .items-center {
+            align-items: center;
+        }
 
-/* Style tags */
-.tags-gt {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0;
-}
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
 
-.tag-li {
-    display: inline-block;
-    background-color: #f0f0f0;
-    color: #666;
-    font-size: 0.8rem;
-    padding: 4px 8px;
-    margin-right: 5px;
-    border-radius: 4px;
-}
+        .flex {
+            display: flex;
+        }
 
-/* Style save job button */
-.save-job-tag {
-    font-size: 0.8rem;
-    color: #0077cc;
-    cursor: pointer;
-}
+        .p-3 {
+            padding: .75rem;
+        }
 
-.save-job-tag:hover {
-    text-decoration: underline;
-}
+        .bg-is-surface {
+            background-color: rgba(37, 0, 73, .05);
+        }
 
-/* Style top company filter section */
-.styles_bellyFilter__mEi9S {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
+        .rounded-lg {
+            border-radius: .5rem;
+        }
 
-.styles_bellyFilterComp__xYmcV {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
+        .gap-1 {
+            gap: .25rem;
+        }
 
-.styles_topCompany-img-container__dT8Wr img {
-    border-radius: 50%;
-    margin-right: 10px;
-}
+        .items-center {
+            align-items: center;
+        }
 
-.styles_title__l6QIj {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 5px;
-}
+        .flex {
+            display: flex;
+        }
 
-.styles_count-text__X3ib7 {
-    font-size: 0.9rem;
-    color: #666;
-}
+        .w-5 {
+            width: 1.25rem;
+        }
 
+        .h-5 {
+            height: 1.25rem;
+        }
+
+
+
+
+
+        .banner-hero.banner-single {
+            padding: 40px 20px 40px;
+            background: #f2f6fd;
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .banner-hero {
+            padding: 0 65px 0 15px;
+            position: relative;
+            max-width: 1770px;
+            margin: 0 auto;
+        }
+
+        .banner-hero.banner-single:before {
+            content: "";
+            position: absolute;
+            bottom: 1px;
+            left: -3px;
+            height: 170px;
+            width: 218px;
+            background: url(image_gen/img_111.svg) no-repeat 0 100%;
+            background-size: contain;
+            display: inline;
+            top: auto;
+            right: auto;
+        }
+
+        .banner-single .block-banner {
+            padding: 0;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .banner-hero .block-banner {
+            position: relative;
+            z-index: 12;
+            padding: 50px;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        .banner-hero.banner-single:after {
+            content: "";
+            position: absolute;
+            bottom: 1px;
+            right: 5px;
+            height: 170px;
+            width: 213px;
+            background: url(/_next/static/media/right-job-head.20bf0a8a.svg) no-repeat 0 100%;
+            background-size: contain;
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+        }
+
+
+        .animate__fadeInUp {
+            animation-name: fadeInUp;
+        }
+
+        .animate__animated {
+            animation-duration: 1s;
+            animation-duration: var(--animate-duration);
+            animation-fill-mode: both;
+        }
+
+        .display-1,
+        .display-2,
+        .font-heading,
+        .heading-lg,
+        .heading-sm-1,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #05264e;
+        }
+
+        h3 {
+            font-size: 28px;
+            line-height: 35px;
+        }
+
+        h2,
+        h3 {
+            font-family: Plus Jakarta Sans, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            color: #05264e;
+        }
+
+        .animate__fadeInUp {
+            animation-name: fadeInUp;
+        }
+
+        .animate__animated {
+            animation-duration: 1s;
+            animation-duration: var(--animate-duration);
+            animation-fill-mode: both;
+        }
+
+        .animate__fadeInUp {
+            animation-name: fadeInUp;
+        }
+
+        .animate__animated {
+            animation-duration: 1s;
+            animation-duration: var(--animate-duration);
+            animation-fill-mode: both;
+        }
+
+        .banner-hero .block-banner .form-find form {
+            display: flex;
+            width: 100%;
+        }
+
+        .banner-hero .block-banner .form-find .box-industry {
+            width: 100%;
+            max-width: 180px;
+        }
+
+        .banner-hero .block-banner .form-find .input-keysearch {
+            background: url(/_next/static/media/key-numbers.3ced82ea.svg) no-repeat left 10px center;
+        }
+
+        .banner-hero .block-banner .form-find .form-input {
+            border: 0 solid rgba(26, 15, 9, .1);
+            border-radius: 0;
+            padding: 10px 20px 10px 34px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        input[type=date],
+        input[type=email],
+        input[type=tel],
+        input[type=text],
+        input[type=time] {
+            border: 1px solid #e0e6f7;
+            border-radius: 4px;
+            height: 50px;
+            box-shadow: none;
+            padding-left: 20px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .banner-hero .block-banner .form-find .btn-find {
+            min-width: 122px;
+            padding-left: 34px;
+            padding-right: 15px;
+            background-image: url(/_next/static/media/search-icon.80f090b3.svg);
+            background-repeat: no-repeat;
+            background-position: left 19px top 18px;
+        }
+
+        .btn.btn-default {
+            color: #fff;
+            background-color: #3c65f5;
+            line-height: 26px;
+            padding: 10px 25px;
+        }
+
+        [type=button]:not(:disabled),
+        [type=reset]:not(:disabled),
+        [type=submit]:not(:disabled),
+        button:not(:disabled) {
+            cursor: pointer;
+        }
+
+        .btn {
+            font-family: Plus Jakarta Sans, sans-serif;
+            border-radius: 8px;
+            padding: 13px 25px;
+            font-size: 14px;
+            line-height: 1;
+            transition: .2s;
+        }
+
+        .font-sm {
+            font-weight: 500;
+            font-size: 14px !important;
+            line-height: 22px !important;
+        }
+
+        .section-box-2 {
+            width: 100%;
+        }
+
+        .section-box-2 .container {
+            padding: 0;
+            margin-bottom: 40px;
+        }
+
+
+
+
+
+        .title:hover {
+            text-decoration: underline;
+        }
+
+        /* Style company name */
+        .comp-name {
+            color: #0077cc;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .comp-name:hover {
+            text-decoration: underline;
+        }
+
+        /* Style job details */
+        .job-details {
+            margin-top: 10px;
+        }
+
+        .exp-wrap,
+        .sal-wrap,
+        .loc-wrap {
+            margin-right: 10px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Style job description */
+        .job-desc {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* Style tags */
+        .tags-gt {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .tag-li {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #666;
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            margin-right: 5px;
+            border-radius: 4px;
+        }
+
+        /* Style save job button */
+        .save-job-tag {
+            font-size: 0.8rem;
+            color: #0077cc;
+            cursor: pointer;
+        }
+
+        .save-job-tag:hover {
+            text-decoration: underline;
+        }
+
+        /* Style top company filter section */
+        .styles_bellyFilter__mEi9S {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .styles_bellyFilterComp__xYmcV {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .styles_topCompany-img-container__dT8Wr img {
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .styles_title__l6QIj {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .styles_count-text__X3ib7 {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .col {
+            padding: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        .po .box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- <div class="container">
+    <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="box">
-                    <h2>Column 1</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel velit vestibulum.</p>
+            <section class="section-box-2">
+                <div class="container">
+                    <div class="banner-hero banner-single banner-single-bg">
+                        <div class="block-banner text-center">
+                            <h3 class="wow animate__animated animate__fadeInUp"><span class="color-brand-2">22
+                                    Jobs</span> Available Now</h3>
+                            <div class="font-sm color-text-paragraph-2 mt-10 wow animate__animated animate__fadeInUp"
+                                data-wow-delay=".1s">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                                repellendus magni, <br class="d-none d-xl-block">atque delectus molestias quis?</div>
+                            <div class="form-find text-start mt-40 wow animate__animated animate__fadeInUp"
+                                data-wow-delay=".2s">
+                                <form>
+                                    <div class="box-industry"><select
+                                            class="form-input mr-10 select-active input-industry">
+                                            <option value="0">Industry</option>
+                                            <option value="1">Software</option>
+                                            <option value="2">Finance</option>
+                                        </select></div>
+                                    <div class="box-industry"><select
+                                            class="form-input mr-10 select-active input-location">
+                                            <option value="true">Location</option>
+                                            <option value="AX">Aland Islands</option>
+                                            <option value="AF">Afghanistan</option>
+                                        </select></div><input class="form-input input-keysearch mr-10" type="text"
+                                        placeholder="Your keyword... "><button
+                                        class="btn btn-default btn-find font-sm">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-6">
-                <div class="box">
-                    <h2>Column 2</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel velit vestibulum.</p>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="box">
-                    <h2>Column 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel velit vestibulum.</p>
-                </div>
-            </div>
+            </section>
         </div>
-    </div> -->
-
-    <div class="styles_srpc__content__h6cyr">
-
-        <div class="styles_middle-section-container__iteRZ" id="listContainer"><span
-                class="styles_failover-shimmer__0wkQi"></span>
-            <div id="jobs-list-header" class="styles_job-list-header-container__I1rGR">
-                <div class="styles_h1-wrapper__mHVA1"><span class="styles_count-string__DlPaZ"
-                        title="1 - 20 of 27182 ">1 - 20 of 27182 </span>
-                    <h1 class="styles_h1-content__MdLE_" title="It Jobs">It Jobs</h1>
+        <div class="row">
+            <div class="col po">
+                <div class="box">
+                    <div data-v-17f92eb0="" class="boxinside">
+                        <h3 data-v-17f92eb0="">Filter</h3>
+                        <form data-v-17f92eb0="" novalidate="novalidate" class="v-form form-section">
+                            <div data-v-17f92eb0="" class="mr-btm">
+                                <h4 data-v-17f92eb0="">job type</h4>
+                                <ul data-v-17f92eb0="" class="filter-list">
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-328" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-328" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">Full
+                                                        Time</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-v-17f92eb0="" class="mr-btm">
+                                <h4 data-v-17f92eb0="">Company</h4>
+                                <ul data-v-17f92eb0="" class="filter-list">
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-332" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-332" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">Leading IT
+                                                        Company </label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-336" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-336" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">F1Soft
+                                                        International Pvt Ltd</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-340" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-340" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">Amnil
+                                                        Technology</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-344" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-344" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">EBpearls</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-348" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-348" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">SoAni
+                                                        Tech</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-v-17f92eb0="" class="mr-btm">
+                                <h4 data-v-17f92eb0="">Experience</h4>
+                                <ul data-v-17f92eb0="" class="filter-list">
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-352" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-352" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">Senior
+                                                        Level</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-356" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-356" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">Mid
+                                                        Level</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-v-17f92eb0="" class="mr-btm">
+                                <h4 data-v-17f92eb0="">Location</h4>
+                                <ul data-v-17f92eb0="" class="filter-list">
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-360" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-360" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">kathmandu</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-364" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-364" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">Pulchwok,
+                                                        Lalitpur</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-368" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-368" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">Lalitpur</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-372" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-372" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">Kupondole,
+                                                        Lalitpur</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-v-17f92eb0="">
+                                        <div data-v-17f92eb0=""
+                                            class="v-input hidefield theme--light v-input--selection-controls v-input--checkbox">
+                                            <div class="v-input__control">
+                                                <div class="v-input__slot">
+                                                    <div class="v-input--selection-controls__input"><i
+                                                            aria-hidden="true"
+                                                            class="v-icon notranslate mdi mdi-checkbox-blank-outline theme--light"></i><input
+                                                            aria-checked="false" id="input-376" role="checkbox"
+                                                            type="checkbox" value="">
+                                                        <div class="v-input--selection-controls__ripple"></div>
+                                                    </div><label for="input-376" class="v-label theme--light"
+                                                        style="left: 0px; right: auto; position: relative;">Manbhawan ,
+                                                        Lalitpur</label>
+                                                </div>
+                                                <div class="v-messages theme--light">
+                                                    <div class="v-messages__wrapper"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div data-v-17f92eb0="" class="mr-btm"><button data-v-17f92eb0="" type="button"
+                                    class="btn-filter v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default"><span
+                                        class="v-btn__content">Filter</span></button></div>
+                        </form>
+                    </div>
                 </div>
-                <div class="styles_jlh__sort-cont__xtRva"><a class="styles_jlh__save-alert-btn__874Eg">Send me jobs like
-                        these</a><span class="styles_sort-by-container__ATT7x"><span
-                            class="styles_sort-by-text__SRARK">Sort by<span class="styles_blackTxt__r_Q0f">:
-                            </span></span>
-                        <div class="styles_single-select-wrapper__WkB22"><button
-                                class="styles_ss__menu-btn__4s9fF styles_sort-droop-label__TxC3K" id="filter-sort"
-                                type="text" title="Relevance"><span>Relevance</span><i
-                                    class="ni-icon-arrow-down"></i></button>
-                            <ul data-filter-id="sort" class="styles_ss__menu__9TuCu styles_sort-droop-list__BmFFW"
-                                style="top: 125%; left: 0px; bottom: unset; visibility: hidden; pointer-events: all;">
-                                <li class="styles_ss__menu-item__T4rgB" title="Relevance"><a
-                                        data-id="filter-sort-r"><span>Relevance</span></a></li>
-                                <li class="styles_ss__menu-item__T4rgB" title="Date"><a
-                                        data-id="filter-sort-f"><span>Date</span></a></li>
-                            </ul>
-                        </div>
-                    </span></div>
             </div>
-            <div class="styles_job-listing-container__OCfZC">
-                <div class="styles_jlc__main__VdwtF">
-                    <div class="srp-jobtuple-wrapper" data-job-id="100724009712">
-                        <div class="cust-job-tuple layout-wrapper lay-2 sjw__tuple ">
-                            <div class=" row1"><a class="title " title="Sap Basis Consultant"
-                                    href="https://www.naukri.com/job-listings-sap-basis-consultant-tata-consultancy-services-pune-bengaluru-mumbai-all-areas-6-to-10-years-100724009712"
-                                    target="_blank" rel="noopener noreferrer">Sap Basis Consultant</a><span
-                                    class="imagewrap "><img src="https://img.naukri.com/logo_images/v3/892542.gif"
-                                        class="logoImage" loading="lazy"></span></div>
-                            <div class=" row2"><span class=" comp-dtls-wrap"><a class=" comp-name mw-25"
-                                        title="Tata Consultancy Services"
-                                        href="https://www.naukri.com/tata-consultancy-services-jobs-careers-13542"
-                                        target="_blank">Tata Consultancy Services</a><a class="rating"
-                                        href="https://www.ambitionbox.com/reviews/tcs-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
-                                        target="_blank" title="Powered by Ambition Box"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star star"></span><span
-                                            class="main-2">3.8</span><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star"></span></a><a
-                                        class=" review ver-line"
-                                        href="https://www.ambitionbox.com/reviews/tcs-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
-                                        target="_blank" title="Powered by Ambition Box">77645 Reviews</a></span></div>
-                            <div class=" row3">
-                                <div class="job-details "><span class="exp-wrap"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-experience exp"><span
-                                                title="6-10 Yrs " class="expwdth">6-10 Yrs</span></span></span><span
-                                        class="sal-wrap ver-line"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-rupee sal"><span
-                                                title="Not disclosed " class="">Not disclosed</span></span></span><span
-                                        class="loc-wrap ver-line"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-location loc"><span
-                                                title="Pune, Bengaluru, Mumbai (All Areas) " class="locWdth">Pune,
-                                                Bengaluru, Mumbai (All Areas)</span></span></span></div>
-                            </div>
-                            <div class=" row4"><span
-                                    class="job-desc ni-job-tuple-icon ni-job-tuple-icon-srp-description">Monitor support
-                                    and perform troubleshooting steps for SAP application landscape, the as...</span>
-                            </div>
-                            <div class=" row5">
-                                <ul class="tags-gt ">
-                                    <li class="dot-gt tag-li ">SAP Basis</li>
-                                    <li class="dot-gt tag-li ">Unix</li>
-                                    <li class="dot-gt tag-li ">oracle</li>
-                                    <li class="dot-gt tag-li ">Basis</li>
-                                    <li class="dot-gt tag-li ">SAP</li>
-                                    <li class="dot-gt tag-li ">Consulting</li>
-                                </ul>
-                            </div>
-                            <div class=" row6"> <span class="job-post-day ">1 Day Ago</span><span
-                                    class="ni-job-tuple-icon ni-job-tuple-icon-srpSaveUnfilled un-saved save-job-tag">save</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="srp-jobtuple-wrapper" data-job-id="280624006376">
-                        <div class="cust-job-tuple layout-wrapper lay-2 sjw__tuple ">
-                            <div class=" row1"><a class="title " title="Oracle Integration Cloud Consultant"
-                                    href="https://www.naukri.com/job-listings-oracle-integration-cloud-consultant-birlasoft-pune-bengaluru-mumbai-all-areas-7-to-12-years-280624006376"
-                                    target="_blank" rel="noopener noreferrer">Oracle Integration Cloud
-                                    Consultant</a><span class="imagewrap "><img
-                                        src="https://img.naukimg.com/logo_images/groups/v1/219806.gif" class="logoImage"
-                                        loading="lazy"></span></div>
-                            <div class=" row2"><span class=" comp-dtls-wrap"><a class=" comp-name mw-25"
-                                        title="Birlasoft" href="https://www.naukri.com/birlasoft-jobs-careers-152"
-                                        target="_blank">Birlasoft</a><a class="rating"
-                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
-                                        target="_blank" title="Powered by Ambition Box"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star star"></span><span
-                                            class="main-2">3.8</span><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star"></span></a><a
-                                        class=" review ver-line"
-                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
-                                        target="_blank" title="Powered by Ambition Box">2443 Reviews</a></span></div>
-                            <div class=" row3">
-                                <div class="job-details "><span class="exp-wrap"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-experience exp"><span
-                                                title="7-12 Yrs " class="expwdth">7-12 Yrs</span></span></span><span
-                                        class="sal-wrap ver-line"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-rupee sal"><span
-                                                title="Not disclosed " class="">Not disclosed</span></span></span><span
-                                        class="loc-wrap ver-line"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-location loc"><span
-                                                title="Hybrid - Pune, Bengaluru, Mumbai (All Areas) "
-                                                class="locWdth">Hybrid - Pune, Bengaluru, Mumbai (All
-                                                Areas)</span></span></span></div>
-                            </div>
-                            <div class=" row4"><span
-                                    class="job-desc ni-job-tuple-icon ni-job-tuple-icon-srp-description">Well versed in
-                                    calling and consuming RESTful APIs, connecting to file systems, loading,...</span>
-                            </div>
-                            <div class=" row5">
-                                <ul class="tags-gt ">
-                                    <li class="dot-gt tag-li ">Oic</li>
-                                    <li class="dot-gt tag-li ">Oracle Integration Cloud</li>
-                                    <li class="dot-gt tag-li ">Bi Publisher</li>
-                                    <li class="dot-gt tag-li ">Oracle</li>
-                                    <li class="dot-gt tag-li ">Oracle Configurator</li>
-                                    <li class="dot-gt tag-li ">Consulting</li>
-                                    <li class="dot-gt tag-li ">Bi</li>
-                                    <li class="dot-gt tag-li ">Cloud</li>
-                                </ul>
-                            </div>
-                            <div class=" row6"> <span class="job-post-day ">Just Now</span><span
-                                    class="ni-job-tuple-icon ni-job-tuple-icon-srpSaveUnfilled un-saved save-job-tag">save</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="srp-jobtuple-wrapper" data-job-id="280624006343">
-                        <div class="cust-job-tuple layout-wrapper lay-2 sjw__tuple ">
-                            <div class=" row1"><a class="title " title="Saas Paas Architect"
-                                    href="https://www.naukri.com/job-listings-saas-paas-architect-birlasoft-pune-bengaluru-mumbai-all-areas-12-to-19-years-280624006343"
-                                    target="_blank" rel="noopener noreferrer">Saas Paas Architect</a><span
-                                    class="imagewrap "><img
-                                        src="https://img.naukimg.com/logo_images/groups/v1/219806.gif" class="logoImage"
-                                        loading="lazy"></span></div>
-                            <div class=" row2"><span class=" comp-dtls-wrap"><a class=" comp-name mw-25"
-                                        title="Birlasoft" href="https://www.naukri.com/birlasoft-jobs-careers-152"
-                                        target="_blank">Birlasoft</a><a class="rating"
-                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
-                                        target="_blank" title="Powered by Ambition Box"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star star"></span><span
-                                            class="main-2">3.8</span><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star"></span></a><a
-                                        class=" review ver-line"
-                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
-                                        target="_blank" title="Powered by Ambition Box">2443 Reviews</a></span></div>
-                            <div class=" row3">
-                                <div class="job-details "><span class="exp-wrap"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-experience exp"><span
-                                                title="12-19 Yrs " class="expwdth">12-19 Yrs</span></span></span><span
-                                        class="sal-wrap ver-line"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-rupee sal"><span
-                                                title="Not disclosed " class="">Not disclosed</span></span></span><span
-                                        class="loc-wrap ver-line"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-location loc"><span
-                                                title="Hybrid - Pune, Bengaluru, Mumbai (All Areas) "
-                                                class="locWdth">Hybrid - Pune, Bengaluru, Mumbai (All
-                                                Areas)</span></span></span></div>
-                            </div>
-                            <div class=" row4"><span
-                                    class="job-desc ni-job-tuple-icon ni-job-tuple-icon-srp-description">Hi AllWe are
-                                    looking for Saas Paas Architect. Please find below details;Years of exp-12...</span>
-                            </div>
-                            <div class=" row5">
-                                <ul class="tags-gt ">
-                                    <li class="dot-gt tag-li ">SAAS</li>
-                                    <li class="dot-gt tag-li ">PAAS</li>
-                                    <li class="dot-gt tag-li ">Oracle E-business Suite</li>
-                                    <li class="dot-gt tag-li ">VBCS</li>
-                                </ul>
-                            </div>
-                            <div class=" row6"> <span class="job-post-day ">Just Now</span><span
-                                    class="ni-job-tuple-icon ni-job-tuple-icon-srpSaveUnfilled un-saved save-job-tag">save</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="srp-jobtuple-wrapper" data-job-id="110724012244">
-                        <div class="cust-job-tuple layout-wrapper lay-2 sjw__tuple ">
-                            <div class=" row1"><a class="title " title="Ebs Technical Consultant"
-                                    href="https://www.naukri.com/job-listings-ebs-technical-consultant-birlasoft-hyderabad-pune-mumbai-all-areas-6-to-10-years-110724012244"
-                                    target="_blank" rel="noopener noreferrer">Ebs Technical Consultant</a><span
-                                    class="imagewrap "></span></div>
-                            <div class=" row2"><span class=" comp-dtls-wrap"><a class=" comp-name mw-25"
-                                        title="Birlasoft" href="https://www.naukri.com/birlasoft-jobs-careers-152"
-                                        target="_blank">Birlasoft</a><a class="rating"
-                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
-                                        target="_blank" title="Powered by Ambition Box"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star star"></span><span
-                                            class="main-2">3.8</span><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-ot_star"></span></a><a
-                                        class=" review ver-line"
-                                        href="https://www.ambitionbox.com/reviews/birlasoft-reviews?utm_campaign=srp_ratings&amp;utm_medium=desktop&amp;utm_source=naukri"
-                                        target="_blank" title="Powered by Ambition Box">2443 Reviews</a></span></div>
-                            <div class=" row3">
-                                <div class="job-details "><span class="exp-wrap"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-experience exp"><span
-                                                title="6-10 Yrs " class="expwdth">6-10 Yrs</span></span></span><span
-                                        class="sal-wrap ver-line"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-rupee sal"><span
-                                                title="Not disclosed " class="">Not disclosed</span></span></span><span
-                                        class="loc-wrap ver-line"><span
-                                            class="ni-job-tuple-icon ni-job-tuple-icon-srp-location loc"><span
-                                                title="Hybrid - Hyderabad, Pune, Mumbai (All Areas) "
-                                                class="locWdth">Hybrid - Hyderabad, Pune, Mumbai (All
-                                                Areas)</span></span></span></div>
-                            </div>
-                            <div class=" row4"><span
-                                    class="job-desc ni-job-tuple-icon ni-job-tuple-icon-srp-description">About
-                                    Birlasoft- Birlasoft, a global leader at the forefront of Cloud, AI, and Digital
-                                    ...</span></div>
-                            <div class=" row5">
-                                <ul class="tags-gt ">
-                                    <li class="dot-gt tag-li ">Vertex</li>
-                                    <li class="dot-gt tag-li ">GL</li>
-                                    <li class="dot-gt tag-li ">EBS</li>
-                                    <li class="dot-gt tag-li ">Ap</li>
-                                    <li class="dot-gt tag-li ">Consulting</li>
-                                    <li class="dot-gt tag-li ">Technical</li>
-                                    <li class="dot-gt tag-li ">Eb</li>
-                                </ul>
-                            </div>
-                            <div class=" row6"> <span class="job-post-day ">Just Now</span><span
-                                    class="ni-job-tuple-icon ni-job-tuple-icon-srpSaveUnfilled un-saved save-job-tag">save</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="styles_bellyFilter__mEi9S styles_topGroupId__Ic_wT" data-filter-id="topGroupId">
-                        <p class="styles_heading__Hyg7j"><img alt="naukri filter icon" loading="lazy" width="24"
-                                height="24" decoding="async" data-nimg="1"
-                                srcset="https://static.naukimg.com/s/9/121/_next/static/media/belly-filter-company.4c699b11.svg 1x, https://static.naukimg.com/s/9/121/_next/static/media/belly-filter-company.4c699b11.svg 2x"
-                                src="https://static.naukimg.com/s/9/121/_next/static/media/belly-filter-company.4c699b11.svg"
-                                style="color: transparent;"><span class="styles_heading-cta__2URrL">Filter jobs
-                                by</span><span class="styles_heading-key__7VZMV">Top Companies</span></p>
-                        <div>
-                            <div class="styles_bellyFilterComp__xYmcV">
-                                <div class="styles_topCompany-img-container__dT8Wr"><img alt="10476" loading="lazy"
-                                        width="40" height="40" decoding="async" data-nimg="1"
-                                        srcset="//img.naukimg.com/logo_images/groups/v1/10476.gif 1x, //img.naukimg.com/logo_images/groups/v1/10476.gif 2x"
-                                        src="https://img.naukimg.com/logo_images/groups/v1/10476.gif"
-                                        style="color: transparent;"></div>
-                                <div class="styles_bellyFilterInfo__vrsqD">
-                                    <p class="styles_title__l6QIj" title="Accenture">Accenture</p>
-                                    <p class="styles_count-text__X3ib7">7571 Jobs</p>
-                                </div>
-                            </div>
-                            <div class="styles_bellyFilterComp__xYmcV">
-                                <div class="styles_topCompany-img-container__dT8Wr"><img alt="13832" loading="lazy"
-                                        width="40" height="40" decoding="async" data-nimg="1"
-                                        srcset="//img.naukimg.com/logo_images/groups/v1/13832.gif 1x, //img.naukimg.com/logo_images/groups/v1/13832.gif 2x"
-                                        src="https://img.naukimg.com/logo_images/groups/v1/13832.gif"
-                                        style="color: transparent;"></div>
-                                <div class="styles_bellyFilterInfo__vrsqD">
-                                    <p class="styles_title__l6QIj" title="Infosys">Infosys</p>
-                                    <p class="styles_count-text__X3ib7">611 Jobs</p>
-                                </div>
-                            </div>
-                            <div class="styles_bellyFilterComp__xYmcV">
-                                <div class="styles_topCompany-img-container__dT8Wr"><img alt="19288" loading="lazy"
-                                        width="40" height="40" decoding="async" data-nimg="1"
-                                        srcset="//img.naukimg.com/logo_images/groups/v1/19288.gif 1x, //img.naukimg.com/logo_images/groups/v1/19288.gif 2x"
-                                        src="https://img.naukimg.com/logo_images/groups/v1/19288.gif"
-                                        style="color: transparent;"></div>
-                                <div class="styles_bellyFilterInfo__vrsqD">
-                                    <p class="styles_title__l6QIj" title="IBM">IBM</p>
-                                    <p class="styles_count-text__X3ib7">544 Jobs</p>
-                                </div>
-                            </div>
-                            <div class="styles_bellyFilterComp__xYmcV">
-                                <div class="styles_topCompany-img-container__dT8Wr"><img alt="142780" loading="lazy"
-                                        width="40" height="40" decoding="async" data-nimg="1"
-                                        srcset="//img.naukimg.com/logo_images/groups/v1/142780.gif 1x, //img.naukimg.com/logo_images/groups/v1/142780.gif 2x"
-                                        src="https://img.naukimg.com/logo_images/groups/v1/142780.gif"
-                                        style="color: transparent;"></div>
-                                <div class="styles_bellyFilterInfo__vrsqD">
-                                    <p class="styles_title__l6QIj" title="Hitachi">Hitachi</p>
-                                    <p class="styles_count-text__X3ib7">362 Jobs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+            <div class="col-6" id="job-container">
+            </div>
+
+            <div class="col po">
+                <div class="box">
+                    <h2>Never Miss Your Dream Job Again</h2>
+                    <p>Get Instant Alerts for the Jobs You’re Looking For</p>
+                    <p>full_name, email, job lookiing for</p>
                 </div>
             </div>
-
-
         </div>
     </div>
 
-    <!-- Bootstrap and jQuery JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <!-- Bootstrap and jQuery JS -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '/api/v1/joblistings/',
+                // url: '/api/v1/company/',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    data.forEach(function (job) {
+                        console.log(job)
+                        var jobHtml = `
+                            <div class="box">
+                                <div class="srp-jobtuple-wrapper" data-job-id="${job.id}">
+                                    <div class="cust-job-tuple layout-wrapper lay-2 sjw__tuple">
+                                        <div class="row1">
+                                            <span class="imagewrap"><img src="${job.company.logo}" class="logoImage" loading="lazy"></span>
+                                            <a class="title" title="${job.company.name}" href="${job.company.website}" target="_blank" rel="noopener noreferrer">${job.position}</a>
+                                        </div>
+                                        <div class="row2"><span class="comp-dtls-wrap"><a class="comp-name mw-25" title="${job.company.name}" href="${job.company.website}" target="_blank">${job.company.name}</a></span></div>
+
+                                        <div class="row-ss">
+                                            <div class="text-is-secondary text-xs flex items-center flex-wrap gap-2">
+                                                <div class="flex items-center gap-1 bg-is-surface p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>2-3 years</div>
+                                                <div class="flex items-center gap-1 bg-is-surface p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path></svg>${job.address}</div>
+                                                <div class="flex items-center gap-1 bg-is-surface p-3 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"></path></svg>on-site Full Time</div>
+                                            </div>
+                                        </div>
+                                        <div class="row-ed">
+                                            <div class="media-body">
+                                                <span class="text-muted">Key Skills:</span>
+                                                <span itemprop="skills">
+                                                    <span class="badge badge-pill badge-light rounded text-muted">Interpersonal Skills</span>
+                                                    <span class="badge badge-pill badge-light rounded text-muted">Marketing</span>
+                                                    <span class="badge badge-pill badge-light rounded text-muted">Communication</span>
+                                                    <span class="badge badge-pill badge-light rounded text-muted">Time Management</span>
+                                                    <span class="badge badge-pill badge-light rounded text-muted">Market Research</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="row4"><span class="job-desc ni-job-tuple-icon ni-job-tuple-icon-srp-description">${job.additioanl_info}</span></div>
+                                        <div class="row5">
+                                            <ul class="tags-gt">
+                                                <li class="dot-gt tag-li">SAP Basis</li>
+                                                <li class="dot-gt tag-li">Unix</li>
+                                                <li class="dot-gt tag-li">Oracle</li>
+                                                <li class="dot-gt tag-li">Basis</li>
+                                                <li class="dot-gt tag-li">SAP</li>
+                                                <li class="dot-gt tag-li">Consulting</li>
+                                            </ul>
+                                        </div>
+                                        <div class="row6">
+                                            <span class="job-post-day">Posted 1 Day Ago</span>
+                                            <span class="job-post-day">View details</span>
+                                            <span>140 views</span>
+                                            <span class="ni-job-tuple-icon ni-job-tuple-icon-srpSaveUnfilled un-saved save-job-tag">apply</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                        $('#job-container').append(jobHtml);
+                    });
+                },
+                error:function(error){
+                    console.log(error)
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
