@@ -1,12 +1,18 @@
 from django.contrib import admin
-from .models import JobListing, Company, Industry, AdditionalInfo
+from .models import *
 
 
 admin.site.register(Industry)
+admin.site.register(Qualifications)
+admin.site.register(Responsbilities)
+admin.site.register(AboutJob)
+admin.site.register(Skill)
+admin.site.register(JobInfoTitle)
+admin.site.register(Hashtag)
 
 @admin.register(AdditionalInfo)
 class AdditionalInfoAdmin(admin.ModelAdmin):
-    list_display = ('header','job_position')
+    list_display = ('title','job_position')
 
     def job_position(self, obj):
         return f'{obj.job.position} - {obj.job.company.name}'
