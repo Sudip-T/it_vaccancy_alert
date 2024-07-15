@@ -2,13 +2,14 @@ from django.contrib import admin
 from .models import *
 
 
+admin.site.register(Skill)
+admin.site.register(Hashtag)
 admin.site.register(Industry)
+admin.site.register(AboutJob)
+admin.site.register(Specialty)
+admin.site.register(JobInfoTitle)
 admin.site.register(Qualifications)
 admin.site.register(Responsbilities)
-admin.site.register(AboutJob)
-admin.site.register(Skill)
-admin.site.register(JobInfoTitle)
-admin.site.register(Hashtag)
 
 @admin.register(AdditionalInfo)
 class AdditionalInfoAdmin(admin.ModelAdmin):

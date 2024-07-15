@@ -34,33 +34,36 @@ class JobScript:
                 print ("job_data has not been loaded. Call load_job_listing() first.")
             
             job_script = '\n'
-            job_script += f'{job.company.name.capitalize()} is #hiring {job.position}\n\n'
+            job_script += f'{job.company.name} is #hiring {job.position} 📢\n\n'
             if job.Employement_type:
-                job_script += f'Job Type : {job.Employement_type}\n'
+                job_script += f'\U0001F680 Job Type : {job.Employement_type}\n'
             if job.Employement_type:
-                job_script += f'Location : {job.company.address}\n'
+                job_script += f'\U0001F4CD Location : {job.company.address}\n'
             if job.experience:
-                job_script += f'Experience : {job.experience}\n\n\n'
+                job_script += f'\U0001F4BB Experience : {job.experience}'
+            job_script += '\n\n'
             additional_info = job.add_info.all()
             for info in additional_info:
                 if info.title.title == 'Qualifications':
-                    job_script += '**Qualifications:**\n'
-                    job_script += '\n'.join(f'{line}' for line in info.content.split('\n'))
-                    job_script += '\n\n\n'
+                    job_script += 'Qualifications:\n'
+                    job_script += '\n'.join(f'\u2705 {line.strip()}' for line in info.content.split('\n')) + '\n\n'
                 elif info.title.title == 'Responsibilities':
                     job_script += 'Responsibilities:\n'
-                    job_script += '\n'.join(f'{line}' for line in info.content.split('\n'))
-                    job_script += '\n\n\n'
+                    # job_script += '\n'.join(f'{line}' for line in info.content.split('\n'))
+                    job_script += '\n'.join(f'\u2705 {line.strip()}' for line in info.content.split('\n')) + '\n\n'
             if job.application_email:
-                job_script += 'How to Apply\n'
+                job_script += '\U0001F517 How to Apply\n'
                 job_script += f'Interest candidates are encouraged to submit their resume to {job.application_email} or apply through the link in the comment section below\n\n\n'
             else:
-                job_script += 'How to Apply\n'
-                job_script += 'Apply through the link in the comment section below\n\n\n'
+                job_script += '\U0001F517 How to Apply\n'
+                job_script += 'Apply through the link in the comment section below\n\n'
             
             hashtags = job.generate_hashtags()
             for hashtag in job.generate_hashtags():
                 job_script += f'#{hashtag} '
+            
+            if job.application_link:
+                job_script += f'\n\n\n{job.application_link}'
             return job_script
             
         except Exception as e:
@@ -71,14 +74,14 @@ class JobScript:
 
         try:
             job_script = self.create_script_content()
-            with open('image_gen/new_vaccancy.txt', 'w') as file:
+            with open('image_gen/new_vaccancy.txt', 'w', encoding='utf-8') as file:
                 file.write(job_script)
         except Exception as e:
             print(e)
 
 
 if __name__ == "__main__":
-    job_listing_id = 8
+    job_listing_id = 12
     generator = JobScript(job_listing_id)
     generator.generate_job_script()
 
@@ -166,7 +169,7 @@ class JobScript:
             print(e)
 
 # if __name__ == "__main__":
-#     job_listing_id = 8
+#     job_listing_id = 9
 #     generator = JobScript(job_listing_id)
 #     generator.generate_job_script()
 

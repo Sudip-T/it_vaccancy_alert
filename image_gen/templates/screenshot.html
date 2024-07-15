@@ -21,7 +21,9 @@
                     <h3 class="mtb-10" style="font-size: 20px !important;">{{ company.name }}</h3>
                     <p>Job Type : {{ job.Employement_type }}</p>
                     <p>Location : {{ company.address }}</p>
+                    {% if job.experience %}
                     <p>Experience : {{ job.experience }}</p>
+                    {% endif %}
                 </div>
                 <div class="contact">
                     <p class="cp">Send your resume</p>

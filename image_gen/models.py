@@ -20,6 +20,13 @@ class Industry(models.Model):
         return self.name
     
 
+class Specialty(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+    
+
 class Company(models.Model):
     name = models.CharField(max_length=100, unique=True)
     about = models.TextField(blank=True, null=True)
@@ -31,6 +38,7 @@ class Company(models.Model):
     size = models.CharField(max_length=50, blank=True, null=True)
     logo = models.ImageField(upload_to='company_logos/', blank=True, null=True)
     industry = models.ForeignKey(Industry, on_delete=models.SET_NULL, null=True, blank=True)
+    specialties = models.ManyToManyField(Specialty, related_name='profiles', blank=True)
 
     def __str__(self):
         return self.name
@@ -85,7 +93,7 @@ class JobListing(models.Model):
     vac_img = models.ImageField(upload_to='vaccancy', null=True, blank=True)
     # qualifications = models.ManyToManyField('Qualifications', related_name='qualifications')
     # responsbilities = models.ManyToManyField('Responsbilities', related_name='responsbilities')
-    # skills = models.ManyToManyField('Skill', related_name='skills')
+    skills = models.ManyToManyField('Skill', related_name='skills', blank=True)
 
     # jobmetrics
     Job_views = models.PositiveIntegerField(default=0)
@@ -168,6 +176,4 @@ class Hashtag(models.Model):
 
     def __str__(self):
         return self.name
-    
-
     
