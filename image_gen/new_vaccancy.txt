@@ -1,1 +1,32 @@
- 
+
+Prixa is #hiring Mid-level Django Developer 📢
+
+🚀 Job Type : On-site Full-Time
+📍 Location : Jawalakhel, Lalitpur
+💻 Experience : Proven experience as a Django Developer
+
+Qualifications:
+✅ Proven experience as a Django Developer, with a strong portfolio of Django-based projects.
+✅ Solid understanding of web development fundamentals, including HTML, CSS, and JavaScript.
+✅ Proficient in Python and experience with Django framework and its ecosystem (Django ORM, Django REST Framework, Django Templating Engine).
+✅ Experience with version control systems (e.g., Git) and collaborative development workflows.
+✅ Excellent problem-solving and analytical skills.
+✅ Strong attention to detail and ability to work in a fast-paced, collaborative environment
+
+Responsibilities:
+✅ Collaborate with project managers, designers, and other developers to understand business requirements and translate them into technical specifications.
+✅ Develop and maintain web applications using the Django framework, following best practices and coding standards.
+✅ Designing and implementing responsive and user-friendly web templates using Django's templating engine.
+✅ Write clean, efficient, and reusable code while adhering to software development lifecycle principles.
+✅ Design and implement database models and interact with databases using Django ORM.
+✅ Troubleshoot and debug issues, identify and implement solutions in a timely manner.
+✅ Stay up-to-date with the latest trends and technologies in web development and Django ecosystem.
+
+🔗 How to Apply
+Interest candidates are encouraged to submit their resume to hr@prixa.org or apply through the link in the comment section below
+
+
+#itjobs #softwaredeveloper #itcareer #developerjobs #jobsNepal #hiringdevelopers #midleveldjangodeveloper #hirringNepal #engineer #vaccancy 
+
+
+https://www.linkedin.com/jobs/search/?currentJobId=3975110173&f_C=14386519&geoId=92000000&origin=COMPANY_PAGE_JOBS_CLUSTER_EXPANSION&originToLandingJobPostings=3975110173%2C3973461546

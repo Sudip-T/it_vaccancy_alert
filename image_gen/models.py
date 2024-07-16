@@ -1,11 +1,28 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
 
 
 def validate_year_format(value):
+    current_year = timezone.now().year
     try:
-        int(value)
+        year = int(value)
+        if len(value) != 4:
+            raise ValidationError(
+                _('Year must be in YYYY format.'),
+                params={'value': value},
+            )
+        elif year < 1800:
+            raise ValidationError(
+                _('Year must be higher than 1800'),
+                params={'value': value},
+            )
+        elif year > current_year:
+            raise ValidationError(
+                _('Year cannot be greater than the current year'),
+                params={'value': value},
+            )
     except ValueError:
         raise ValidationError(
             _('Year must be a valid integer.'),
@@ -35,29 +52,24 @@ class Company(models.Model):
     address = models.CharField(max_length=200, blank=True, null=True)
     phone_number = models.CharField(max_length=20, blank=True, null=True)
     established_date = models.CharField(max_length=4, validators=[validate_year_format], blank=True, null=True, help_text='Enter the year in YYYY format')
-    size = models.CharField(max_length=50, blank=True, null=True)
+    SIZES = [
+        ('1-10 Employees', '1-10 Employees'),
+        ('11-20 Employees', '11-20 Employees'),
+        ('21-30 Employees', '21-30 Employees'),
+        ('31-50 Employees', '31-50 Employees'),
+        ('51-200 Employees', '51-200 Employees'),
+        ('201-500 Employees', '201-500 Employees')
+    ]
+    size = models.CharField(max_length=50, blank=True, null=True, choices=SIZES)
     logo = models.ImageField(upload_to='company_logos/', blank=True, null=True)
     industry = models.ForeignKey(Industry, on_delete=models.SET_NULL, null=True, blank=True)
-    specialties = models.ManyToManyField(Specialty, related_name='profiles', blank=True)
+    specialties = models.ManyToManyField(Specialty, related_name='specialties', blank=True)
 
     def __str__(self):
         return self.name
-    
-    def save(self, *args, **kwargs):
-        if self.established_date:
-            try:
-                int(self.established_date)
-            except ValueError:
-                raise ValidationError(_('Invalid year format. Please enter a valid year in YYYY format.'))
-        super().save(*args, **kwargs)
 
-    def established_year(self):
-        return self.established_date
-
-    def clean(self):
-        super().clean()
-        if self.established_date and len(self.established_date) != 4:
-            raise ValidationError(_('Year must be in YYYY format.'))
+    class Meta:
+        ordering = ['-id']
 
 
 class JobListing(models.Model):
@@ -82,13 +94,14 @@ class JobListing(models.Model):
         ('Team Lead', 'Team Lead'),
         ('Project Manager', 'Project Manager')
     ], blank=True, null=True,)
-    salary = models.CharField(max_length=100, default='Negotiable/Not Disclosed')
+    has_expired = models.BooleanField(default=False)
     deadline = models.DateTimeField(blank=True, null=True)
     date_published = models.DateTimeField(auto_now_add=True)
     application_link = models.URLField(blank=True, null=True)
     application_email = models.EmailField(blank=True, null=True)
     no_of_vaccancy = models.CharField(max_length=5,blank=True, null=True)
     education_level = models.CharField(max_length=100, blank=True, null=True)
+    salary = models.CharField(max_length=100, default='Negotiable/Not Disclosed')
 
     vac_img = models.ImageField(upload_to='vaccancy', null=True, blank=True)
     # qualifications = models.ManyToManyField('Qualifications', related_name='qualifications')
@@ -130,6 +143,10 @@ class AdditionalInfo(models.Model):
 
     def __str__(self):
         return self.title.title
+    
+    class Meta:
+        unique_together = ['job', 'title']
+        ordering = ['-id']
       
     
 class JobInfoTitle(models.Model):

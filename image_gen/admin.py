@@ -22,7 +22,7 @@ class AdditionalInfoAdmin(admin.ModelAdmin):
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
     list_display = ('name', 'industry', 'size', 'established_date')
-    search_fields = ('name', 'industry')
+    search_fields = ('name',)
     list_filter = ('industry', 'size')
 
 @admin.register(JobListing)
