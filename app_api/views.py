@@ -40,7 +40,9 @@ class AdditionalInfoView(ModelViewSet):
 
 class CompanyView(ModelViewSet):
     queryset = Company.objects.all()
-    serializer_class = CompanySerializer
+    # serializer_class = CompanySerializer
+
+ 
 
     # def perform_create(self, serializer):
     #     # Override perform_create to handle specialties association

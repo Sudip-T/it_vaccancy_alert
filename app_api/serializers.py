@@ -19,10 +19,17 @@ class JobvaccancySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class GetCompanySerializer(serializers.ModelSerializer):
+    specialties = SpecialitiesSerializer(many=True,read_only=True)
+    class Meta:
+        model = models.Company
+        fields = '__all__'
+
+
 class CompanySerializer(serializers.ModelSerializer):
     logo = serializers.ImageField(required=False)
     specialties = serializers.ListField(write_only=True)
-    # specialties = SpecialitiesSerializer(write_only=True)
+    # specialties = SpecialitiesSerializer(many=True,read_only=True)
 
     class Meta:
         model = models.Company
